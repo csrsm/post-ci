@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout  ️ # 将代码拉取到虚拟机
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js
         # 配置 Node 执行环境（当前构建的服务器默认没有 Node 环境，可以通过 Action 安装 Node）
@@ -29,12 +29,8 @@ jobs:
       - name: Deploy
         # 将构建产物 commit 到一个分支上，用于发布静态站点资源
         # https://github.com/peaceiris/actions-gh-pages
-        uses: csrsm/post-ci@gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          # Github 会在 workflow 中自动生成 GIHUBT_TOKEN，用于认证 workflow 的运行
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          # 静态资源目录设置
-          publish_dir: ./dist
-          # 默认发布到 gh-pages 分支上，可以指定特定的发布分支（不能选拉取代码的分支）
-          publish_branch: gh-pages
+          branch: gh-pages # 部署后提交到那个分支
+          folder: dist # 这里填打包好的目录名称
 
