@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot-指标监控 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/csrsm-blog/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/csrsm-blog/assets/css/0.styles.55ca18c7.css" as="style"><link rel="preload" href="/csrsm-blog/assets/js/app.454ee9d8.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/7.dcf110ed.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/39.7d481f19.js" as="script"><link rel="prefetch" href="/csrsm-blog/assets/js/1.21d8b032.js"><link rel="prefetch" href="/csrsm-blog/assets/js/10.f7727560.js"><link rel="prefetch" href="/csrsm-blog/assets/js/11.b24ae5b9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/12.7b019a26.js"><link rel="prefetch" href="/csrsm-blog/assets/js/13.e177012a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/14.d1946efc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/15.1196f0f2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/16.3674e8a7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/17.59e378b2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/18.b5d363ed.js"><link rel="prefetch" href="/csrsm-blog/assets/js/19.2420e1e4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/20.ad8dd5df.js"><link rel="prefetch" href="/csrsm-blog/assets/js/21.38820707.js"><link rel="prefetch" href="/csrsm-blog/assets/js/22.96d8d990.js"><link rel="prefetch" href="/csrsm-blog/assets/js/23.21b1b2ec.js"><link rel="prefetch" href="/csrsm-blog/assets/js/24.cc388ced.js"><link rel="prefetch" href="/csrsm-blog/assets/js/25.ad0002ee.js"><link rel="prefetch" href="/csrsm-blog/assets/js/26.ded936a4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/27.ed36e5a3.js"><link rel="prefetch" href="/csrsm-blog/assets/js/28.ee1ac958.js"><link rel="prefetch" href="/csrsm-blog/assets/js/29.49ad9e73.js"><link rel="prefetch" href="/csrsm-blog/assets/js/3.4b96004a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/30.4694b34a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/31.2760f058.js"><link rel="prefetch" href="/csrsm-blog/assets/js/32.a901893a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/33.2a9f0d8b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/34.fc47d4fc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/35.2d3765de.js"><link rel="prefetch" href="/csrsm-blog/assets/js/36.449567d0.js"><link rel="prefetch" href="/csrsm-blog/assets/js/37.4a627e0e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/38.ae092217.js"><link rel="prefetch" href="/csrsm-blog/assets/js/4.2b8faf49.js"><link rel="prefetch" href="/csrsm-blog/assets/js/40.6aa2db47.js"><link rel="prefetch" href="/csrsm-blog/assets/js/41.b714f40b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/42.c701cd24.js"><link rel="prefetch" href="/csrsm-blog/assets/js/43.a0d123b6.js"><link rel="prefetch" href="/csrsm-blog/assets/js/44.f476f304.js"><link rel="prefetch" href="/csrsm-blog/assets/js/45.9a86ee02.js"><link rel="prefetch" href="/csrsm-blog/assets/js/46.f9b38586.js"><link rel="prefetch" href="/csrsm-blog/assets/js/47.3e93fdd7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/48.6b9a245e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/49.ada3dd91.js"><link rel="prefetch" href="/csrsm-blog/assets/js/5.21b74e30.js"><link rel="prefetch" href="/csrsm-blog/assets/js/50.9c058dcc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/6.a8369353.js"><link rel="prefetch" href="/csrsm-blog/assets/js/8.547730f9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/9.be1c3c52.js">
+    <link rel="stylesheet" href="/csrsm-blog/assets/css/0.styles.55ca18c7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/csrsm-blog/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/csrsm-blog/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/csrsm-blog/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          SpringBoot-指标监控
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-02-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot-数据访问
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-基础入门
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>指标监控</p> <h1 id="springboot2核心技术-指标监控"><a href="#springboot2核心技术-指标监控" class="header-anchor">#</a> SpringBoot2核心技术-指标监控</h1> <h1 id="指标监控"><a href="#指标监控" class="header-anchor">#</a> 指标监控</h1> <h1 id="_1、springboot-actuator"><a href="#_1、springboot-actuator" class="header-anchor">#</a> 1、SpringBoot Actuator</h1> <h2 id="_1、简介"><a href="#_1、简介" class="header-anchor">#</a> 1、简介</h2> <p>未来每一个微服务在云上部署以后，我们都需要对其进行监控、追踪、审计、控制等。SpringBoot就抽取了Actuator场景，使得我们每个微服务快速引用即可获得生产级别的应用监控、审计等功能。</p> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606886483335-697ee1c1-2f69-43ab-bddc-3a038382319c.png" alt="image.png"></p> <h2 id="_2、1-x与2-x的不同"><a href="#_2、1-x与2-x的不同" class="header-anchor">#</a> 2、1.x与2.x的不同</h2> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606884394162-ac7f2d8e-7abb-44df-9998-fb0f2705f238.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_14%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image.png"></p> <h2 id="_3、如何使用"><a href="#_3、如何使用" class="header-anchor">#</a> 3、如何使用</h2> <ul><li>引入场景</li> <li>访问 <a href="http://localhost:8080/actuator/" target="_blank" rel="noopener noreferrer">http://localhost:8080/actuator/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>**</li> <li>暴露所有监控信息为HTTP</li></ul> <div class="language- extra-class"><pre class="language-text"><code>management:
+  endpoints:
+    enabled-by-default: true #暴露所有端点信息
+    web:
+      exposure:
+        include: '*'  #以web方式暴露
+</code></pre></div><ul><li>测试</li></ul> <p><a href="http://localhost:8080/actuator/beans" target="_blank" rel="noopener noreferrer">http://localhost:8080/actuator/beans<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="http://localhost:8080/actuator/configprops" target="_blank" rel="noopener noreferrer">http://localhost:8080/actuator/configprops<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="http://localhost:8080/actuator/metrics" target="_blank" rel="noopener noreferrer">http://localhost:8080/actuator/metrics<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="http://localhost:8080/actuator/metrics/jvm.gc.pause" target="_blank" rel="noopener noreferrer">http://localhost:8080/actuator/metrics/jvm.gc.pause<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><a href="http://localhost:8080/actuator/metrics" target="_blank" rel="noopener noreferrer">http://localhost:8080/actuator/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>endpointName/detailPath
+。。。。。。</p> <h2 id="_4、可视化"><a href="#_4、可视化" class="header-anchor">#</a> 4、可视化</h2> <p><a href="https://github.com/codecentric/spring-boot-admin" target="_blank" rel="noopener noreferrer">https://github.com/codecentric/spring-boot-admin<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h1 id="_2、actuator-endpoint"><a href="#_2、actuator-endpoint" class="header-anchor">#</a> 2、Actuator Endpoint</h1> <h2 id="_1、最常使用的端点"><a href="#_1、最常使用的端点" class="header-anchor">#</a> 1、最常使用的端点</h2> <table><thead><tr><th>ID</th> <th>描述</th></tr></thead> <tbody><tr><td><code>auditevents</code></td> <td>暴露当前应用程序的审核事件信息。需要一个<code>AuditEventRepository组件</code>。</td></tr> <tr><td><code>beans</code></td> <td>显示应用程序中所有Spring Bean的完整列表。</td></tr> <tr><td><code>caches</code></td> <td>暴露可用的缓存。</td></tr> <tr><td><code>conditions</code></td> <td>显示自动配置的所有条件信息，包括匹配或不匹配的原因。</td></tr> <tr><td><code>configprops</code></td> <td>显示所有<code>@ConfigurationProperties</code>。</td></tr> <tr><td><code>env</code></td> <td>暴露Spring的属性<code>ConfigurableEnvironment</code></td></tr> <tr><td><code>flyway</code></td> <td>显示已应用的所有Flyway数据库迁移。 需要一个或多个<code>Flyway</code>组件。</td></tr> <tr><td><code>health</code></td> <td>显示应用程序运行状况信息。</td></tr> <tr><td><code>httptrace</code></td> <td>显示HTTP跟踪信息（默认情况下，最近100个HTTP请求-响应）。需要一个<code>HttpTraceRepository</code>组件。</td></tr> <tr><td><code>info</code></td> <td>显示应用程序信息。</td></tr> <tr><td><code>integrationgraph</code></td> <td>显示Spring <code>integrationgraph</code> 。需要依赖<code>spring-integration-core</code>。</td></tr> <tr><td><code>loggers</code></td> <td>显示和修改应用程序中日志的配置。</td></tr> <tr><td><code>liquibase</code></td> <td>显示已应用的所有Liquibase数据库迁移。需要一个或多个<code>Liquibase</code>组件。</td></tr> <tr><td><code>metrics</code></td> <td>显示当前应用程序的“指标”信息。</td></tr> <tr><td><code>mappings</code></td> <td>显示所有<code>@RequestMapping</code>路径列表。</td></tr> <tr><td><code>scheduledtasks</code></td> <td>显示应用程序中的计划任务。</td></tr> <tr><td><code>sessions</code></td> <td>允许从Spring Session支持的会话存储中检索和删除用户会话。需要使用Spring Session的基于Servlet的Web应用程序。</td></tr> <tr><td><code>shutdown</code></td> <td>使应用程序正常关闭。默认禁用。</td></tr> <tr><td><code>startup</code></td> <td>显示由<code>ApplicationStartup</code>收集的启动步骤数据。需要使用<code>SpringApplication</code>进行配置<code>BufferingApplicationStartup</code>。</td></tr> <tr><td><code>threaddump</code></td> <td>执行线程转储。</td></tr></tbody></table> <p>如果您的应用程序是Web应用程序（Spring MVC，Spring WebFlux或Jersey），则可以使用以下附加端点：</p> <table><thead><tr><th>ID</th> <th>描述</th></tr></thead> <tbody><tr><td><code>heapdump</code></td> <td>返回<code>hprof</code>堆转储文件。</td></tr> <tr><td><code>jolokia</code></td> <td>通过HTTP暴露JMX bean（需要引入Jolokia，不适用于WebFlux）。需要引入依赖<code>jolokia-core</code>。</td></tr> <tr><td><code>logfile</code></td> <td>返回日志文件的内容（如果已设置<code>logging.file.name</code>或<code>logging.file.path</code>属性）。支持使用HTTP<code>Range</code>标头来检索部分日志文件的内容。</td></tr> <tr><td><code>prometheus</code></td> <td>以Prometheus服务器可以抓取的格式公开指标。需要依赖<code>micrometer-registry-prometheus</code>。</td></tr></tbody></table> <p>最常用的Endpoint</p> <ul><li><strong>Health：监控状况</strong></li> <li><strong>Metrics：运行时指标</strong></li> <li><strong>Loggers：日志记录</strong></li></ul> <h2 id="_2、health-endpoint"><a href="#_2、health-endpoint" class="header-anchor">#</a> 2、Health Endpoint</h2> <p>健康检查端点，我们一般用于在云平台，平台会定时的检查应用的健康状况，我们就需要Health Endpoint可以为平台返回当前应用的一系列组件健康状况的集合。</p> <p>重要的几点：</p> <ul><li>health endpoint返回的结果，应该是一系列健康检查后的一个汇总报告</li> <li>很多的健康检查默认已经自动配置好了，比如：数据库、redis等</li> <li>可以很容易的添加自定义的健康检查机制</li></ul> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606908975702-4f9a3208-15ca-4a78-9f76-939ef986db7e.png" alt="image.png"></p> <h2 id="_3、metrics-endpoint"><a href="#_3、metrics-endpoint" class="header-anchor">#</a> 3、Metrics Endpoint</h2> <p>提供详细的、层级的、空间指标信息，这些信息可以被pull（主动推送）或者push（被动获取）方式得到；</p> <ul><li>通过Metrics对接多种监控系统</li> <li>简化核心Metrics开发</li> <li>添加自定义Metrics或者扩展已有Metrics</li></ul> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606909073222-c6e77ca3-4b1c-4f38-a1c6-8614dec4f7bc.png" alt="image.png"></p> <h2 id="_4、管理endpoints"><a href="#_4、管理endpoints" class="header-anchor">#</a> 4、管理Endpoints</h2> <h3 id="_1、开启与禁用endpoints"><a href="#_1、开启与禁用endpoints" class="header-anchor">#</a> 1、开启与禁用Endpoints</h3> <ul><li>默认所有的Endpoint除过shutdown都是开启的。</li> <li>需要开启或者禁用某个Endpoint。配置模式为  <strong>management.endpoint.<strong><strong><endpointName></endpointName></strong></strong>.enabled = true</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>management:
+  endpoint:
+    beans:
+      enabled: true
+</code></pre></div><ul><li>或者禁用所有的Endpoint然后手动开启指定的Endpoint</li></ul> <div class="language- extra-class"><pre class="language-text"><code>management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    beans:
+      enabled: true
+    health:
+      enabled: true
+</code></pre></div><h3 id="_2、暴露endpoints"><a href="#_2、暴露endpoints" class="header-anchor">#</a> 2、暴露Endpoints</h3> <p>支持的暴露方式</p> <ul><li>HTTP：默认只暴露<strong>health</strong>和<strong>info</strong> Endpoint</li> <li><strong>JMX</strong>：默认暴露所有Endpoint</li> <li>除过health和info，剩下的Endpoint都应该进行保护访问。如果引入SpringSecurity，则会默认配置安全访问规则</li></ul> <table><thead><tr><th>ID</th> <th>JMX</th> <th>Web</th></tr></thead> <tbody><tr><td><code>auditevents</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>beans</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>caches</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>conditions</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>configprops</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>env</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>flyway</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>health</code></td> <td>Yes</td> <td>Yes</td></tr> <tr><td><code>heapdump</code></td> <td>N/A</td> <td>No</td></tr> <tr><td><code>httptrace</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>info</code></td> <td>Yes</td> <td>Yes</td></tr> <tr><td><code>integrationgraph</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>jolokia</code></td> <td>N/A</td> <td>No</td></tr> <tr><td><code>logfile</code></td> <td>N/A</td> <td>No</td></tr> <tr><td><code>loggers</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>liquibase</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>metrics</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>mappings</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>prometheus</code></td> <td>N/A</td> <td>No</td></tr> <tr><td><code>scheduledtasks</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>sessions</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>shutdown</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>startup</code></td> <td>Yes</td> <td>No</td></tr> <tr><td><code>threaddump</code></td> <td>Yes</td> <td>No</td></tr></tbody></table> <h1 id="_3、定制-endpoint"><a href="#_3、定制-endpoint" class="header-anchor">#</a> 3、定制 Endpoint</h1> <h2 id="_1、定制-health-信息"><a href="#_1、定制-health-信息" class="header-anchor">#</a> 1、定制 Health 信息</h2> <div class="language- extra-class"><pre class="language-text"><code>import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.stereotype.Component;
+@Component
+public class MyHealthIndicator implements HealthIndicator {
+    @Override
+    public Health health() {
+        int errorCode = check(); // perform some specific health check
+        if (errorCode != 0) {
+            return Health.down().withDetail(&quot;Error Code&quot;, errorCode).build();
+        }
+        return Health.up().build();
+    }
+}
+构建Health
+Health build = Health.down()
+                .withDetail(&quot;msg&quot;, &quot;error service&quot;)
+                .withDetail(&quot;code&quot;, &quot;500&quot;)
+                .withException(new RuntimeException())
+                .build();
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>management:
+    health:
+      enabled: true
+      show-details: always #总是显示详细信息。可显示每个模块的状态信息
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>@Component
+public class MyComHealthIndicator extends AbstractHealthIndicator {
+    /**
+     * 真实的检查方法
+     * @param builder
+     * @throws Exception
+     */
+    @Override
+    protected void doHealthCheck(Health.Builder builder) throws Exception {
+        //mongodb。  获取连接进行测试
+        Map&lt;String,Object&gt; map = new HashMap&lt;&gt;();
+        // 检查完成
+        if(1 == 2){
+//            builder.up(); //健康
+            builder.status(Status.UP);
+            map.put(&quot;count&quot;,1);
+            map.put(&quot;ms&quot;,100);
+        }else {
+//            builder.down();
+            builder.status(Status.OUT_OF_SERVICE);
+            map.put(&quot;err&quot;,&quot;连接超时&quot;);
+            map.put(&quot;ms&quot;,3000);
+        }
+        builder.withDetail(&quot;code&quot;,100)
+                .withDetails(map);
+    }
+}
+</code></pre></div><h3 id=""><a href="#" class="header-anchor">#</a></h3> <h2 id="_2、定制info信息"><a href="#_2、定制info信息" class="header-anchor">#</a> 2、定制info信息</h2> <p>常用两种方式</p> <h4 id="_1、编写配置文件"><a href="#_1、编写配置文件" class="header-anchor">#</a> 1、编写配置文件</h4> <div class="language- extra-class"><pre class="language-text"><code>info:
+  appName: boot-admin
+  version: 2.0.1
+  mavenProjectName: @project.artifactId@  #使用@@可以获取maven的pom文件值
+  mavenProjectVersion: @project.version@
+</code></pre></div><h4 id="_2、编写infocontributor"><a href="#_2、编写infocontributor" class="header-anchor">#</a> 2、编写InfoContributor</h4> <div class="language- extra-class"><pre class="language-text"><code>import java.util.Collections;
+import org.springframework.boot.actuate.info.Info;
+import org.springframework.boot.actuate.info.InfoContributor;
+import org.springframework.stereotype.Component;
+@Component
+public class ExampleInfoContributor implements InfoContributor {
+    @Override
+    public void contribute(Info.Builder builder) {
+        builder.withDetail(&quot;example&quot;,
+                Collections.singletonMap(&quot;key&quot;, &quot;value&quot;));
+    }
+}
+</code></pre></div><p><a href="http://localhost:8080/actuator/info" target="_blank" rel="noopener noreferrer">http://localhost:8080/actuator/info<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 会输出以上方式返回的所有info信息</p> <h2 id="_3、定制metrics信息"><a href="#_3、定制metrics信息" class="header-anchor">#</a> 3、定制Metrics信息</h2> <h4 id="_1、springboot支持自动适配的metrics"><a href="#_1、springboot支持自动适配的metrics" class="header-anchor">#</a> 1、SpringBoot支持自动适配的Metrics</h4> <ul><li><p>JVM metrics, report utilization of:</p></li> <li><ul><li>Various memory and buffer pools</li> <li>Statistics related to garbage collection</li> <li>Threads utilization</li> <li>Number of classes loaded/unloaded</li></ul></li> <li><p>CPU metrics</p></li> <li><p>File descriptor metrics</p></li> <li><p>Kafka consumer and producer metrics</p></li> <li><p>Log4j2 metrics: record the number of events logged to Log4j2 at each level</p></li> <li><p>Logback metrics: record the number of events logged to Logback at each level</p></li> <li><p>Uptime metrics: report a gauge for uptime and a fixed gauge representing the application’s absolute start time</p></li> <li><p>Tomcat metrics (<code>server.tomcat.mbeanregistry.enabled</code> must be set to <code>true</code> for all Tomcat metrics to be registered)</p></li> <li><p><a href="https://docs.spring.io/spring-integration/docs/5.4.1/reference/html/system-management.html#micrometer-integration" target="_blank" rel="noopener noreferrer">Spring Integration<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> metrics</p></li></ul> <h4 id="_2、增加定制metrics"><a href="#_2、增加定制metrics" class="header-anchor">#</a> 2、增加定制Metrics</h4> <div class="language- extra-class"><pre class="language-text"><code>class MyService{
+    Counter counter;
+    public MyService(MeterRegistry meterRegistry){
+         counter = meterRegistry.counter(&quot;myservice.method.running.counter&quot;);
+    }
+    public void hello() {
+        counter.increment();
+    }
+}
+//也可以使用下面的方式
+@Bean
+MeterBinder queueSize(Queue queue) {
+    return (registry) -&gt; Gauge.builder(&quot;queueSize&quot;, queue::size).register(registry);
+}
+</code></pre></div><h2 id="_4、定制endpoint"><a href="#_4、定制endpoint" class="header-anchor">#</a> 4、定制Endpoint</h2> <div class="language- extra-class"><pre class="language-text"><code>@Component
+@Endpoint(id = &quot;container&quot;)
+public class DockerEndpoint {
+    @ReadOperation
+    public Map getDockerInfo(){
+        return Collections.singletonMap(&quot;info&quot;,&quot;docker started...&quot;);
+    }
+    @WriteOperation
+    private void restartDocker(){
+        System.out.println(&quot;docker restarted....&quot;);
+    }
+}
+</code></pre></div><p>场景：开发<strong>ReadinessEndpoint</strong>来管理程序是否就绪，或者<strong>Liveness****Endpoint</strong>来管理程序是否存活；</p> <p>当然，这个也可以直接使用 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-kubernetes-probes" target="_blank" rel="noopener noreferrer">https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-kubernetes-probes<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-02-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot-数据访问
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-基础入门
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_1、简介">1、简介</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_2、1-x与2-x的不同">2、1.x与2.x的不同</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_3、如何使用">3、如何使用</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_4、可视化">4、可视化</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_1、最常使用的端点">1、最常使用的端点</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_2、health-endpoint">2、Health Endpoint</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_3、metrics-endpoint">3、Metrics Endpoint</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_4、管理endpoints">4、管理Endpoints</a><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_1、开启与禁用endpoints">1、开启与禁用Endpoints</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_2、暴露endpoints">2、暴露Endpoints</a></li></ul></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_1、定制-health-信息">1、定制 Health 信息</a><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#"></a></li></ul></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_2、定制info信息">2、定制info信息</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_3、定制metrics信息">3、定制Metrics信息</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#_4、定制endpoint">4、定制Endpoint</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/csrsm-blog/assets/js/app.454ee9d8.js" defer></script><script src="/csrsm-blog/assets/js/7.dcf110ed.js" defer></script><script src="/csrsm-blog/assets/js/39.7d481f19.js" defer></script>
+  </body>
+</html>

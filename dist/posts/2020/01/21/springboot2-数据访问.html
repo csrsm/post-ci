@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot-数据访问 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/csrsm-blog/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/csrsm-blog/assets/css/0.styles.55ca18c7.css" as="style"><link rel="preload" href="/csrsm-blog/assets/js/app.454ee9d8.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/7.dcf110ed.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/40.6aa2db47.js" as="script"><link rel="prefetch" href="/csrsm-blog/assets/js/1.21d8b032.js"><link rel="prefetch" href="/csrsm-blog/assets/js/10.f7727560.js"><link rel="prefetch" href="/csrsm-blog/assets/js/11.b24ae5b9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/12.7b019a26.js"><link rel="prefetch" href="/csrsm-blog/assets/js/13.e177012a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/14.d1946efc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/15.1196f0f2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/16.3674e8a7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/17.59e378b2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/18.b5d363ed.js"><link rel="prefetch" href="/csrsm-blog/assets/js/19.2420e1e4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/20.ad8dd5df.js"><link rel="prefetch" href="/csrsm-blog/assets/js/21.38820707.js"><link rel="prefetch" href="/csrsm-blog/assets/js/22.96d8d990.js"><link rel="prefetch" href="/csrsm-blog/assets/js/23.21b1b2ec.js"><link rel="prefetch" href="/csrsm-blog/assets/js/24.cc388ced.js"><link rel="prefetch" href="/csrsm-blog/assets/js/25.ad0002ee.js"><link rel="prefetch" href="/csrsm-blog/assets/js/26.ded936a4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/27.ed36e5a3.js"><link rel="prefetch" href="/csrsm-blog/assets/js/28.ee1ac958.js"><link rel="prefetch" href="/csrsm-blog/assets/js/29.49ad9e73.js"><link rel="prefetch" href="/csrsm-blog/assets/js/3.4b96004a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/30.4694b34a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/31.2760f058.js"><link rel="prefetch" href="/csrsm-blog/assets/js/32.a901893a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/33.2a9f0d8b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/34.fc47d4fc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/35.2d3765de.js"><link rel="prefetch" href="/csrsm-blog/assets/js/36.449567d0.js"><link rel="prefetch" href="/csrsm-blog/assets/js/37.4a627e0e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/38.ae092217.js"><link rel="prefetch" href="/csrsm-blog/assets/js/39.7d481f19.js"><link rel="prefetch" href="/csrsm-blog/assets/js/4.2b8faf49.js"><link rel="prefetch" href="/csrsm-blog/assets/js/41.b714f40b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/42.c701cd24.js"><link rel="prefetch" href="/csrsm-blog/assets/js/43.a0d123b6.js"><link rel="prefetch" href="/csrsm-blog/assets/js/44.f476f304.js"><link rel="prefetch" href="/csrsm-blog/assets/js/45.9a86ee02.js"><link rel="prefetch" href="/csrsm-blog/assets/js/46.f9b38586.js"><link rel="prefetch" href="/csrsm-blog/assets/js/47.3e93fdd7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/48.6b9a245e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/49.ada3dd91.js"><link rel="prefetch" href="/csrsm-blog/assets/js/5.21b74e30.js"><link rel="prefetch" href="/csrsm-blog/assets/js/50.9c058dcc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/6.a8369353.js"><link rel="prefetch" href="/csrsm-blog/assets/js/8.547730f9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/9.be1c3c52.js">
+    <link rel="stylesheet" href="/csrsm-blog/assets/css/0.styles.55ca18c7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/csrsm-blog/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/csrsm-blog/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/csrsm-blog/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          SpringBoot-数据访问
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-02-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot2-配置文件
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-指标监控
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>数据访问</p> <h1 id="springboot2核心技术-数据访问"><a href="#springboot2核心技术-数据访问" class="header-anchor">#</a> SpringBoot2核心技术-数据访问</h1> <h1 id="数据访问"><a href="#数据访问" class="header-anchor">#</a> 数据访问</h1> <h1 id="_1、sql"><a href="#_1、sql" class="header-anchor">#</a> 1、SQL</h1> <h2 id="_1、数据源的自动配置-hikaridatasource"><a href="#_1、数据源的自动配置-hikaridatasource" class="header-anchor">#</a> 1、数据源的自动配置-<strong>HikariDataSource</strong></h2> <h3 id="_1、导入jdbc场景"><a href="#_1、导入jdbc场景" class="header-anchor">#</a> 1、导入JDBC场景</h3> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jdbc&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre></div><h3 id=""><a href="#" class="header-anchor">#</a> <img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606366100317-5e0199fa-6709-4d32-bce3-bb262e2e5e6a.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_10%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image.png"></h3> <p>数据库驱动？</p> <p>为什么导入JDBC场景，官方不导入驱动？官方不知道我们接下要操作什么数据库。</p> <p>数据库版本和驱动版本对应</p> <div class="language- extra-class"><pre class="language-text"><code>默认版本：&lt;mysql.version&gt;8.0.22&lt;/mysql.version&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+&lt;!--            &lt;version&gt;5.1.49&lt;/version&gt;--&gt;
+        &lt;/dependency&gt;
+想要修改版本
+1、直接依赖引入具体版本（maven的就近依赖原则）
+2、重新声明版本（maven的属性的就近优先原则）
+    &lt;properties&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+        &lt;mysql.version&gt;5.1.49&lt;/mysql.version&gt;
+    &lt;/properties&gt;
+</code></pre></div><h3 id="_2、分析自动配置"><a href="#_2、分析自动配置" class="header-anchor">#</a> 2、分析自动配置</h3> <h4 id="_1、自动配置的类"><a href="#_1、自动配置的类" class="header-anchor">#</a> 1、自动配置的类</h4> <ul><li><p>DataSourceAutoConfiguration ： 数据源的自动配置</p></li> <li><ul><li>修改数据源相关的配置：<strong>spring.datasource</strong></li> <li><strong>数据库连接池的配置，是自己容器中没有DataSource才自动配置的</strong></li> <li>底层配置好的连接池是：<strong>HikariDataSource</strong></li></ul></li></ul> <div class="language- extra-class"><pre class="language-text"><code>    @Configuration(proxyBeanMethods = false)
+    @Conditional(PooledDataSourceCondition.class)
+    @ConditionalOnMissingBean({ DataSource.class, XADataSource.class })
+    @Import({ DataSourceConfiguration.Hikari.class, DataSourceConfiguration.Tomcat.class,
+            DataSourceConfiguration.Dbcp2.class, DataSourceConfiguration.OracleUcp.class,
+            DataSourceConfiguration.Generic.class, DataSourceJmxConfiguration.class })
+    protected static class PooledDataSourceConfiguration
+</code></pre></div><ul><li><p>DataSourceTransactionManagerAutoConfiguration： 事务管理器的自动配置</p></li> <li><p>JdbcTemplateAutoConfiguration： <strong>JdbcTemplate的自动配置，可以来对数据库进行crud</strong></p></li> <li><ul><li>可以修改这个配置项@ConfigurationProperties(prefix = <strong>&quot;spring.jdbc&quot;</strong>) 来修改JdbcTemplate</li> <li>@Bean@Primary    JdbcTemplate；容器中有这个组件</li></ul></li> <li><p>JndiDataSourceAutoConfiguration： jndi的自动配置</p></li> <li><p>XADataSourceAutoConfiguration： 分布式事务相关的</p></li></ul> <h3 id="_3、修改配置项"><a href="#_3、修改配置项" class="header-anchor">#</a> 3、修改配置项</h3> <div class="language- extra-class"><pre class="language-text"><code>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_account
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+</code></pre></div><h3 id="_4、测试"><a href="#_4、测试" class="header-anchor">#</a> 4、测试</h3> <div class="language- extra-class"><pre class="language-text"><code>@Slf4j
+@SpringBootTest
+class Boot05WebAdminApplicationTests {
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+    @Test
+    void contextLoads() {
+//        jdbcTemplate.queryForObject(&quot;select * from account_tbl&quot;)
+//        jdbcTemplate.queryForList(&quot;select * from account_tbl&quot;,)
+        Long aLong = jdbcTemplate.queryForObject(&quot;select count(*) from account_tbl&quot;, Long.class);
+        log.info(&quot;记录总数：{}&quot;,aLong);
+    }
+}
+</code></pre></div><h2 id="_2、使用druid数据源"><a href="#_2、使用druid数据源" class="header-anchor">#</a> 2、使用Druid数据源</h2> <h3 id="_1、druid官方github地址"><a href="#_1、druid官方github地址" class="header-anchor">#</a> 1、druid官方github地址</h3> <p><a href="https://github.com/alibaba/druid" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/druid<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>整合第三方技术的两种方式</p> <ul><li>自定义</li> <li>找starter</li></ul> <h3 id="_2、自定义方式"><a href="#_2、自定义方式" class="header-anchor">#</a> 2、自定义方式</h3> <h4 id="_1、创建数据源"><a href="#_1、创建数据源" class="header-anchor">#</a> 1、创建数据源</h4> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;druid&lt;/artifactId&gt;
+            &lt;version&gt;1.1.17&lt;/version&gt;
+        &lt;/dependency&gt;
+&lt;bean id=&quot;dataSource&quot; class=&quot;com.alibaba.druid.pool.DruidDataSource&quot;
+        destroy-method=&quot;close&quot;&gt;
+        &lt;property name=&quot;url&quot; value=&quot;${jdbc.url}&quot; /&gt;
+        &lt;property name=&quot;username&quot; value=&quot;${jdbc.username}&quot; /&gt;
+        &lt;property name=&quot;password&quot; value=&quot;${jdbc.password}&quot; /&gt;
+        &lt;property name=&quot;maxActive&quot; value=&quot;20&quot; /&gt;
+        &lt;property name=&quot;initialSize&quot; value=&quot;1&quot; /&gt;
+        &lt;property name=&quot;maxWait&quot; value=&quot;60000&quot; /&gt;
+        &lt;property name=&quot;minIdle&quot; value=&quot;1&quot; /&gt;
+        &lt;property name=&quot;timeBetweenEvictionRunsMillis&quot; value=&quot;60000&quot; /&gt;
+        &lt;property name=&quot;minEvictableIdleTimeMillis&quot; value=&quot;300000&quot; /&gt;
+        &lt;property name=&quot;testWhileIdle&quot; value=&quot;true&quot; /&gt;
+        &lt;property name=&quot;testOnBorrow&quot; value=&quot;false&quot; /&gt;
+        &lt;property name=&quot;testOnReturn&quot; value=&quot;false&quot; /&gt;
+        &lt;property name=&quot;poolPreparedStatements&quot; value=&quot;true&quot; /&gt;
+        &lt;property name=&quot;maxOpenPreparedStatements&quot; value=&quot;20&quot; /&gt;
+</code></pre></div><h4 id="_2、statviewservlet"><a href="#_2、statviewservlet" class="header-anchor">#</a> 2、StatViewServlet</h4> <blockquote><p>StatViewServlet的用途包括：</p> <ul><li>提供监控信息展示的html页面</li> <li>提供监控信息的JSON API</li></ul></blockquote> <div class="language- extra-class"><pre class="language-text"><code>    &lt;servlet&gt;
+        &lt;servlet-name&gt;DruidStatView&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.alibaba.druid.support.http.StatViewServlet&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;DruidStatView&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/druid/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+</code></pre></div><h4 id="_3、statfilter"><a href="#_3、statfilter" class="header-anchor">#</a> 3、StatFilter</h4> <blockquote><p>用于统计监控信息；如SQL监控、URI监控</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>需要给数据源中配置如下属性；可以允许多个filter，多个用，分割；如：
+&lt;property name=&quot;filters&quot; value=&quot;stat,slf4j&quot; /&gt;
+</code></pre></div><p>系统中所有filter：</p> <table><thead><tr><th>别名</th> <th>Filter类名</th></tr></thead> <tbody><tr><td>default</td> <td>com.alibaba.druid.filter.stat.StatFilter</td></tr> <tr><td>stat</td> <td>com.alibaba.druid.filter.stat.StatFilter</td></tr> <tr><td>mergeStat</td> <td>com.alibaba.druid.filter.stat.MergeStatFilter</td></tr> <tr><td>encoding</td> <td>com.alibaba.druid.filter.encoding.EncodingConvertFilter</td></tr> <tr><td>log4j</td> <td>com.alibaba.druid.filter.logging.Log4jFilter</td></tr> <tr><td>log4j2</td> <td>com.alibaba.druid.filter.logging.Log4j2Filter</td></tr> <tr><td>slf4j</td> <td>com.alibaba.druid.filter.logging.Slf4jLogFilter</td></tr> <tr><td>commonlogging</td> <td>com.alibaba.druid.filter.logging.CommonsLogFilter</td></tr></tbody></table> <p><strong>慢SQL记录配置</strong></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;bean id=&quot;stat-filter&quot; class=&quot;com.alibaba.druid.filter.stat.StatFilter&quot;&gt;
+    &lt;property name=&quot;slowSqlMillis&quot; value=&quot;10000&quot; /&gt;
+    &lt;property name=&quot;logSlowSql&quot; value=&quot;true&quot; /&gt;
+&lt;/bean&gt;
+使用 slowSqlMillis 定义慢SQL的时长
+</code></pre></div><h3 id="_3、使用官方starter方式"><a href="#_3、使用官方starter方式" class="header-anchor">#</a> 3、使用官方starter方式</h3> <h4 id="_1、引入druid-starter"><a href="#_1、引入druid-starter" class="header-anchor">#</a> 1、引入druid-starter</h4> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;1.1.17&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre></div><h4 id="_2、分析自动配置-2"><a href="#_2、分析自动配置-2" class="header-anchor">#</a> 2、分析自动配置</h4> <ul><li>扩展配置项 <strong>spring.datasource.druid</strong></li> <li>DruidSpringAopConfiguration.<strong>class</strong>,   监控SpringBean的；配置项：<strong>spring.datasource.druid.aop-patterns</strong></li> <li>DruidStatViewServletConfiguration.<strong>class</strong>, 监控页的配置：<strong>spring.datasource.druid.stat-view-servlet；默认开启</strong></li> <li>DruidWebStatFilterConfiguration.<strong>class</strong>, web监控配置；<strong>spring.datasource.druid.web-stat-filter；默认开启</strong></li> <li>DruidFilterConfiguration.<strong>class</strong>}) 所有Druid自己filter的配置</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    private static final String FILTER_STAT_PREFIX = &quot;spring.datasource.druid.filter.stat&quot;;
+    private static final String FILTER_CONFIG_PREFIX = &quot;spring.datasource.druid.filter.config&quot;;
+    private static final String FILTER_ENCODING_PREFIX = &quot;spring.datasource.druid.filter.encoding&quot;;
+    private static final String FILTER_SLF4J_PREFIX = &quot;spring.datasource.druid.filter.slf4j&quot;;
+    private static final String FILTER_LOG4J_PREFIX = &quot;spring.datasource.druid.filter.log4j&quot;;
+    private static final String FILTER_LOG4J2_PREFIX = &quot;spring.datasource.druid.filter.log4j2&quot;;
+    private static final String FILTER_COMMONS_LOG_PREFIX = &quot;spring.datasource.druid.filter.commons-log&quot;;
+    private static final String FILTER_WALL_PREFIX = &quot;spring.datasource.druid.filter.wall&quot;;
+</code></pre></div><h4 id="_3、配置示例"><a href="#_3、配置示例" class="header-anchor">#</a> 3、配置示例</h4> <div class="language- extra-class"><pre class="language-text"><code>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_account
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      aop-patterns: com.atguigu.admin.*  #监控SpringBean
+      filters: stat,wall     # 底层开启功能，stat（sql监控），wall（防火墙）
+      stat-view-servlet:   # 配置监控页功能
+        enabled: true
+        login-username: admin
+        login-password: admin
+        resetEnable: false
+      web-stat-filter:  # 监控web
+        enabled: true
+        urlPattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+      filter:
+        stat:    # 对上面filters里面的stat的详细配置
+          slow-sql-millis: 1000
+          logSlowSql: true
+          enabled: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+</code></pre></div><p>SpringBoot配置示例</p> <p><a href="https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/druid/tree/master/druid-spring-boot-starter<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>配置项列表<a href="https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%88%97%E8%A1%A8" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/druid/wiki/DruidDataSource配置属性列表<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="_3、整合mybatis操作"><a href="#_3、整合mybatis操作" class="header-anchor">#</a> 3、整合MyBatis操作</h2> <p><a href="https://github.com/mybatis" target="_blank" rel="noopener noreferrer">https://github.com/mybatis<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>starter</p> <p>SpringBoot官方的Starter：spring-boot-starter-*</p> <p>第三方的： *-spring-boot-starter</p> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;2.1.4&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606704096118-53001250-a04a-4210-80ee-6de6a370be2e.png" alt="image.png"></p> <h3 id="_1、配置模式"><a href="#_1、配置模式" class="header-anchor">#</a> 1、配置模式</h3> <ul><li>全局配置文件</li> <li>SqlSessionFactory: 自动配置好了</li> <li>SqlSession：自动配置了 <strong>SqlSessionTemplate 组合了SqlSession</strong></li> <li>@Import(<strong>AutoConfiguredMapperScannerRegistrar</strong>.<strong>class</strong>）；</li> <li>Mapper： 只要我们写的操作MyBatis的接口标准了 <strong>@Mapper 就会被自动扫描进来</strong></li></ul> <div class="language- extra-class"><pre class="language-text"><code>@EnableConfigurationProperties(MybatisProperties.class) ： MyBatis配置项绑定类。
+@AutoConfigureAfter({ DataSourceAutoConfiguration.class, MybatisLanguageDriverAutoConfiguration.class })
+public class MybatisAutoConfiguration{}
+@ConfigurationProperties(prefix = &quot;mybatis&quot;)
+public class MybatisProperties
+</code></pre></div><p>可以修改配置文件中 mybatis 开始的所有；</p> <div class="language- extra-class"><pre class="language-text"><code># 配置mybatis规则
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml  #全局配置文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml  #sql映射文件位置
+Mapper接口---&gt;绑定Xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;com.atguigu.admin.mapper.AccountMapper&quot;&gt;
+&lt;!--    public Account getAcct(Long id); --&gt;
+    &lt;select id=&quot;getAcct&quot; resultType=&quot;com.atguigu.admin.bean.Account&quot;&gt;
+        select * from  account_tbl where  id=#{id}
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre></div><p>配置 <strong>private</strong> Configuration <strong>configuration</strong>; mybatis.<strong>configuration下面的所有，就是相当于改mybatis全局配置文件中的值</strong></p> <div class="language- extra-class"><pre class="language-text"><code># 配置mybatis规则
+mybatis:
+#  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+ 可以不写全局；配置文件，所有全局配置文件的配置都放在configuration配置项中即可
+</code></pre></div><ul><li>导入mybatis官方starter</li> <li>编写mapper接口。标准@Mapper注解</li> <li>编写sql映射文件并绑定mapper接口</li> <li>在application.yaml中指定Mapper配置文件的位置，以及指定全局配置文件的信息 （建议；<strong>配置在mybatis.configuration</strong>）</li></ul> <h3 id="_2、注解模式"><a href="#_2、注解模式" class="header-anchor">#</a> 2、注解模式</h3> <div class="language- extra-class"><pre class="language-text"><code>@Mapper
+public interface CityMapper {
+    @Select(&quot;select * from city where id=#{id}&quot;)
+    public City getById(Long id);
+    public void insert(City city);
+}
+</code></pre></div><h3 id="_3、混合模式"><a href="#_3、混合模式" class="header-anchor">#</a> 3、混合模式</h3> <div class="language- extra-class"><pre class="language-text"><code>@Mapper
+public interface CityMapper {
+    @Select(&quot;select * from city where id=#{id}&quot;)
+    public City getById(Long id);
+    public void insert(City city);
+}
+</code></pre></div><p><strong>最佳实战：</strong></p> <ul><li>引入mybatis-starter</li> <li><strong>配置application.yaml中，指定mapper-location位置即可</strong></li> <li>编写Mapper接口并标注@Mapper注解</li> <li>简单方法直接注解方式</li> <li>复杂方法编写mapper.xml进行绑定映射</li> <li><em>@MapperScan(&quot;com.atguigu.admin.mapper&quot;) 简化，其他的接口就可以不用标注@Mapper注解</em></li></ul> <h2 id="_4、整合-mybatis-plus-完成crud"><a href="#_4、整合-mybatis-plus-完成crud" class="header-anchor">#</a> 4、整合 MyBatis-Plus 完成CRUD</h2> <h3 id="_1、什么是mybatis-plus"><a href="#_1、什么是mybatis-plus" class="header-anchor">#</a> 1、什么是MyBatis-Plus</h3> <p><a href="https://github.com/baomidou/mybatis-plus" target="_blank" rel="noopener noreferrer">MyBatis-Plus<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>（简称 MP）是一个 <a href="http://www.mybatis.org/mybatis-3/" target="_blank" rel="noopener noreferrer">MyBatis<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p> <p><a href="https://baomidou.com/" target="_blank" rel="noopener noreferrer">mybatis plus 官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>建议安装 <strong>MybatisX</strong> 插件</p> <h3 id="_2、整合mybatis-plus"><a href="#_2、整合mybatis-plus" class="header-anchor">#</a> 2、整合MyBatis-Plus</h3> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;com.baomidou&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;3.4.1&lt;/version&gt;
+        &lt;/dependency&gt;
+</code></pre></div><p>自动配置</p> <ul><li>MybatisPlusAutoConfiguration 配置类，MybatisPlusProperties 配置项绑定。<strong>mybatis-plus：xxx 就是对****mybatis-plus的定制</strong></li> <li><strong>SqlSessionFactory 自动配置好。底层是容器中默认的数据源</strong></li> <li><strong>mapperLocations 自动配置好的。有默认值。****classpath*:/mapper/</strong>/*.xml；任意包的类路径下的所有mapper文件夹下任意路径下的所有xml都是sql映射文件。  建议以后sql映射文件，放在 mapper下**</li> <li><strong>容器中也自动配置好了</strong> <strong>SqlSessionTemplate</strong></li> <li><strong>@Mapper 标注的接口也会被自动扫描；建议直接</strong> @MapperScan(<strong>&quot;com.atguigu.admin.mapper&quot;</strong>) 批量扫描就行</li></ul> <p><strong>优点：</strong></p> <ul><li>只需要我们的Mapper继承 <strong>BaseMapper</strong> 就可以拥有crud能力</li></ul> <h3 id="_3、crud功能"><a href="#_3、crud功能" class="header-anchor">#</a> 3、CRUD功能</h3> <div class="language- extra-class"><pre class="language-text"><code>    @GetMapping(&quot;/user/delete/{id}&quot;)
+    public String deleteUser(@PathVariable(&quot;id&quot;) Long id,
+                             @RequestParam(value = &quot;pn&quot;,defaultValue = &quot;1&quot;)Integer pn,
+                             RedirectAttributes ra){
+        userService.removeById(id);
+        ra.addAttribute(&quot;pn&quot;,pn);
+        return &quot;redirect:/dynamic_table&quot;;
+    }
+    @GetMapping(&quot;/dynamic_table&quot;)
+    public String dynamic_table(@RequestParam(value=&quot;pn&quot;,defaultValue = &quot;1&quot;) Integer pn,Model model){
+        //表格内容的遍历
+//        response.sendError
+//     List&lt;User&gt; users = Arrays.asList(new User(&quot;zhangsan&quot;, &quot;123456&quot;),
+//                new User(&quot;lisi&quot;, &quot;123444&quot;),
+//                new User(&quot;haha&quot;, &quot;aaaaa&quot;),
+//                new User(&quot;hehe &quot;, &quot;aaddd&quot;));
+//        model.addAttribute(&quot;users&quot;,users);
+//
+//        if(users.size()&gt;3){
+//            throw new UserTooManyException();
+//        }
+        //从数据库中查出user表中的用户进行展示
+        //构造分页参数
+        Page&lt;User&gt; page = new Page&lt;&gt;(pn, 2);
+        //调用page进行分页
+        Page&lt;User&gt; userPage = userService.page(page, null);
+//        userPage.getRecords()
+//        userPage.getCurrent()
+//        userPage.getPages()
+        model.addAttribute(&quot;users&quot;,userPage);
+        return &quot;table/dynamic_table&quot;;
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>@Service
+public class UserServiceImpl extends ServiceImpl&lt;UserMapper,User&gt; implements UserService {
+}
+public interface UserService extends IService&lt;User&gt; {
+}
+</code></pre></div><h1 id="_2、nosql"><a href="#_2、nosql" class="header-anchor">#</a> 2、NoSQL</h1> <p>Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、<strong>缓存</strong>和消息中间件。 它支持多种类型的数据结构，如 <a href="http://www.redis.cn/topics/data-types-intro.html#strings" target="_blank" rel="noopener noreferrer">字符串（strings）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>， <a href="http://www.redis.cn/topics/data-types-intro.html#hashes" target="_blank" rel="noopener noreferrer">散列（hashes）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>， <a href="http://www.redis.cn/topics/data-types-intro.html#lists" target="_blank" rel="noopener noreferrer">列表（lists）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>， <a href="http://www.redis.cn/topics/data-types-intro.html#sets" target="_blank" rel="noopener noreferrer">集合（sets）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>， <a href="http://www.redis.cn/topics/data-types-intro.html#sorted-sets" target="_blank" rel="noopener noreferrer">有序集合（sorted sets）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 与范围查询， <a href="http://www.redis.cn/topics/data-types-intro.html#bitmaps" target="_blank" rel="noopener noreferrer">bitmaps<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>， <a href="http://www.redis.cn/topics/data-types-intro.html#hyperloglogs" target="_blank" rel="noopener noreferrer">hyperloglogs<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 和 <a href="http://www.redis.cn/commands/geoadd.html" target="_blank" rel="noopener noreferrer">地理空间（geospatial）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 索引半径查询。 Redis 内置了 <a href="http://www.redis.cn/topics/replication.html" target="_blank" rel="noopener noreferrer">复制（replication）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，<a href="http://www.redis.cn/commands/eval.html" target="_blank" rel="noopener noreferrer">LUA脚本（Lua scripting）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>， <a href="http://www.redis.cn/topics/lru-cache.html" target="_blank" rel="noopener noreferrer">LRU驱动事件（LRU eviction）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，<a href="http://www.redis.cn/topics/transactions.html" target="_blank" rel="noopener noreferrer">事务（transactions）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 和不同级别的 <a href="http://www.redis.cn/topics/persistence.html" target="_blank" rel="noopener noreferrer">磁盘持久化（persistence）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>， 并通过 <a href="http://www.redis.cn/topics/sentinel.html" target="_blank" rel="noopener noreferrer">Redis哨兵（Sentinel）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>和自动 <a href="http://www.redis.cn/topics/cluster-tutorial.html" target="_blank" rel="noopener noreferrer">分区（Cluster）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>提供高可用性（high availability）。</p> <h2 id="_1、redis自动配置"><a href="#_1、redis自动配置" class="header-anchor">#</a> 1、Redis自动配置</h2> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606745732785-17d1227a-75b9-4f00-a3f1-7fc4137b5113.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_10%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image.png"></p> <p>自动配置：</p> <ul><li>RedisAutoConfiguration 自动配置类。RedisProperties 属性类 --&gt; <strong>spring.redis.xxx是对redis的配置</strong></li> <li>连接工厂是准备好的。<strong>Lettuce</strong>ConnectionConfiguration、<strong>Jedis</strong>ConnectionConfiguration</li> <li><strong>自动注入了RedisTemplate</strong>&lt;<strong>Object</strong>, <strong>Object</strong>&gt; ： xxxTemplate；</li> <li><strong>自动注入了StringRedisTemplate；k：v都是String</strong></li> <li><strong>key：value</strong></li> <li><strong>底层只要我们使用</strong> **StringRedisTemplate、**<strong>RedisTemplate就可以操作redis</strong></li></ul> <p><strong>redis环境搭建</strong></p> <p><strong>1、阿里云按量付费redis。经典网络</strong></p> <p><strong>2、申请redis的公网连接地址</strong></p> <p><strong>3、修改白名单  允许0.0.0.0/0 访问</strong></p> <h2 id="_2、redistemplate与lettuce"><a href="#_2、redistemplate与lettuce" class="header-anchor">#</a> 2、RedisTemplate与Lettuce</h2> <div class="language- extra-class"><pre class="language-text"><code>    @Test
+    void testRedis(){
+        ValueOperations&lt;String, String&gt; operations = redisTemplate.opsForValue();
+        operations.set(&quot;hello&quot;,&quot;world&quot;);
+        String hello = operations.get(&quot;hello&quot;);
+        System.out.println(hello);
+    }
+</code></pre></div><h2 id="_3、切换至jedis"><a href="#_3、切换至jedis" class="header-anchor">#</a> 3、切换至jedis</h2> <div class="language- extra-class"><pre class="language-text"><code>        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+&lt;!--        导入jedis--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;redis.clients&lt;/groupId&gt;
+            &lt;artifactId&gt;jedis&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+spring:
+  redis:
+      host: r-bp1nc7reqesxisgxpipd.redis.rds.aliyuncs.com
+      port: 6379
+      password: lfy:Lfy123456
+      client-type: jedis
+      jedis:
+        pool:
+          max-active: 10
+</code></pre></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-02-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot2-配置文件
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-指标监控
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_1、数据源的自动配置-hikaridatasource">1、数据源的自动配置-HikariDataSource</a><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_1、导入jdbc场景">1、导入JDBC场景</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#image-png-https-cdn-nlark-com-yuque-0-2020-png-1354552-1606366100317-5e0199fa-6709-4d32-bce3-bb262e2e5e6a-png-x-oss-process-image-2fwatermark-2ctype-d3f5lw1py3jvagvp-2csize-10-2ctext-yxrndwlnds5jb20g5bca56gf6lc3-2ccolor-ffffff-2cshadow-50-2ct-80-2cg-se-2cx-10-2cy-10">!image.png</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_2、分析自动配置">2、分析自动配置</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_3、修改配置项">3、修改配置项</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_4、测试">4、测试</a></li></ul></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_2、使用druid数据源">2、使用Druid数据源</a><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_1、druid官方github地址">1、druid官方github地址</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_2、自定义方式">2、自定义方式</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_3、使用官方starter方式">3、使用官方starter方式</a></li></ul></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_3、整合mybatis操作">3、整合MyBatis操作</a><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_1、配置模式">1、配置模式</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_2、注解模式">2、注解模式</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_3、混合模式">3、混合模式</a></li></ul></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_4、整合-mybatis-plus-完成crud">4、整合 MyBatis-Plus 完成CRUD</a><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_1、什么是mybatis-plus">1、什么是MyBatis-Plus</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_2、整合mybatis-plus">2、整合MyBatis-Plus</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_3、crud功能">3、CRUD功能</a></li></ul></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_1、redis自动配置">1、Redis自动配置</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_2、redistemplate与lettuce">2、RedisTemplate与Lettuce</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#_3、切换至jedis">3、切换至jedis</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/csrsm-blog/assets/js/app.454ee9d8.js" defer></script><script src="/csrsm-blog/assets/js/7.dcf110ed.js" defer></script><script src="/csrsm-blog/assets/js/40.6aa2db47.js" defer></script>
+  </body>
+</html>

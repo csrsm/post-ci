@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot2-配置文件 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/csrsm-blog/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/csrsm-blog/assets/css/0.styles.55ca18c7.css" as="style"><link rel="preload" href="/csrsm-blog/assets/js/app.454ee9d8.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/7.dcf110ed.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/42.c701cd24.js" as="script"><link rel="prefetch" href="/csrsm-blog/assets/js/1.21d8b032.js"><link rel="prefetch" href="/csrsm-blog/assets/js/10.f7727560.js"><link rel="prefetch" href="/csrsm-blog/assets/js/11.b24ae5b9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/12.7b019a26.js"><link rel="prefetch" href="/csrsm-blog/assets/js/13.e177012a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/14.d1946efc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/15.1196f0f2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/16.3674e8a7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/17.59e378b2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/18.b5d363ed.js"><link rel="prefetch" href="/csrsm-blog/assets/js/19.2420e1e4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/20.ad8dd5df.js"><link rel="prefetch" href="/csrsm-blog/assets/js/21.38820707.js"><link rel="prefetch" href="/csrsm-blog/assets/js/22.96d8d990.js"><link rel="prefetch" href="/csrsm-blog/assets/js/23.21b1b2ec.js"><link rel="prefetch" href="/csrsm-blog/assets/js/24.cc388ced.js"><link rel="prefetch" href="/csrsm-blog/assets/js/25.ad0002ee.js"><link rel="prefetch" href="/csrsm-blog/assets/js/26.ded936a4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/27.ed36e5a3.js"><link rel="prefetch" href="/csrsm-blog/assets/js/28.ee1ac958.js"><link rel="prefetch" href="/csrsm-blog/assets/js/29.49ad9e73.js"><link rel="prefetch" href="/csrsm-blog/assets/js/3.4b96004a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/30.4694b34a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/31.2760f058.js"><link rel="prefetch" href="/csrsm-blog/assets/js/32.a901893a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/33.2a9f0d8b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/34.fc47d4fc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/35.2d3765de.js"><link rel="prefetch" href="/csrsm-blog/assets/js/36.449567d0.js"><link rel="prefetch" href="/csrsm-blog/assets/js/37.4a627e0e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/38.ae092217.js"><link rel="prefetch" href="/csrsm-blog/assets/js/39.7d481f19.js"><link rel="prefetch" href="/csrsm-blog/assets/js/4.2b8faf49.js"><link rel="prefetch" href="/csrsm-blog/assets/js/40.6aa2db47.js"><link rel="prefetch" href="/csrsm-blog/assets/js/41.b714f40b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/43.a0d123b6.js"><link rel="prefetch" href="/csrsm-blog/assets/js/44.f476f304.js"><link rel="prefetch" href="/csrsm-blog/assets/js/45.9a86ee02.js"><link rel="prefetch" href="/csrsm-blog/assets/js/46.f9b38586.js"><link rel="prefetch" href="/csrsm-blog/assets/js/47.3e93fdd7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/48.6b9a245e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/49.ada3dd91.js"><link rel="prefetch" href="/csrsm-blog/assets/js/5.21b74e30.js"><link rel="prefetch" href="/csrsm-blog/assets/js/50.9c058dcc.js"><link rel="prefetch" href="/csrsm-blog/assets/js/6.a8369353.js"><link rel="prefetch" href="/csrsm-blog/assets/js/8.547730f9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/9.be1c3c52.js">
+    <link rel="stylesheet" href="/csrsm-blog/assets/css/0.styles.55ca18c7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/csrsm-blog/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/csrsm-blog/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/csrsm-blog/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          SpringBoot2-配置文件
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-02-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot-自动配置原理
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-数据访问
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>了解SpringBoot yaml配置文件</p> <h1 id="springboot2核心技术-核心功能"><a href="#springboot2核心技术-核心功能" class="header-anchor">#</a> SpringBoot2核心技术-核心功能</h1> <h1 id="配置文件"><a href="#配置文件" class="header-anchor">#</a> 配置文件</h1> <h2 id="_1、文件类型"><a href="#_1、文件类型" class="header-anchor">#</a> 1、文件类型</h2> <h3 id="_1-1、properties"><a href="#_1-1、properties" class="header-anchor">#</a> 1.1、properties</h3> <p>同以前的properties用法</p> <h4 id="_1-2、yaml"><a href="#_1-2、yaml" class="header-anchor">#</a> 1.2、yaml</h4> <h5 id="_1-2-1、简介"><a href="#_1-2-1、简介" class="header-anchor">#</a> 1.2.1、简介</h5> <p>YAML 是 &quot;YAML Ain't Markup Language&quot;（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是：&quot;Yet Another Markup Language&quot;（仍是一种标记语言）。</p> <p>非常适合用来做以数据为中心的配置文件</p> <h5 id="_1-2-2、基本语法"><a href="#_1-2-2、基本语法" class="header-anchor">#</a> 1.2.2、基本语法</h5> <ul><li>key: value；kv之间有空格</li> <li>大小写敏感</li> <li>使用缩进表示层级关系</li> <li>缩进不允许使用tab，只允许空格</li> <li>缩进的空格数不重要，只要相同层级的元素左对齐即可</li> <li>'#'表示注释</li> <li>字符串无需加引号，如果要加，''与&quot;&quot;表示字符串内容 会被 转义/不转义</li></ul> <h5 id="_1-2-3、数据类型"><a href="#_1-2-3、数据类型" class="header-anchor">#</a> 1.2.3、数据类型</h5> <ul><li>字面量：单个的、不可再分的值。date、boolean、string、number、null</li></ul> <div class="language- extra-class"><pre class="language-text"><code>k: v
+</code></pre></div><ul><li>对象：键值对的集合。map、hash、set、object</li></ul> <div class="language- extra-class"><pre class="language-text"><code>行内写法：  k: {k1:v1,k2:v2,k3:v3}
+#或
+k: 
+  k1: v1
+  k2: v2
+  k3: v3
+</code></pre></div><ul><li>数组：一组按次序排列的值。array、list、queue</li></ul> <div class="language- extra-class"><pre class="language-text"><code>行内写法：  k: [v1,v2,v3]
+#或者
+k:
+ - v1
+ - v2
+ - v3
+</code></pre></div><h5 id="_1-2-4、示例"><a href="#_1-2-4、示例" class="header-anchor">#</a> 1.2.4、示例</h5> <div class="language-java extra-class"><pre class="language-java"><code><span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> userName<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Boolean</span> boss<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Date</span> birth<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Pet</span> pet<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> interests<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> animal<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">&gt;</span></span> score<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Double</span><span class="token punctuation">&gt;</span></span> salarys<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Pet</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> allPets<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Pet</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Double</span> weight<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># yaml表示以上对象</span>
+<span class="token key atrule">person</span><span class="token punctuation">:</span>
+  <span class="token key atrule">userName</span><span class="token punctuation">:</span> zhangsan
+  <span class="token key atrule">boss</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">birth</span><span class="token punctuation">:</span> 2019/12/12 20<span class="token punctuation">:</span><span class="token datetime number">12:33</span>
+  <span class="token key atrule">age</span><span class="token punctuation">:</span> <span class="token number">18</span>
+  <span class="token key atrule">pet</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> tomcat
+    <span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">23.4</span>
+  <span class="token key atrule">interests</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>篮球<span class="token punctuation">,</span>游泳<span class="token punctuation">]</span>
+  <span class="token key atrule">animal</span><span class="token punctuation">:</span> 
+    <span class="token punctuation">-</span> jerry
+    <span class="token punctuation">-</span> mario
+  <span class="token key atrule">score</span><span class="token punctuation">:</span>
+    <span class="token key atrule">english</span><span class="token punctuation">:</span> 
+      <span class="token key atrule">first</span><span class="token punctuation">:</span> <span class="token number">30</span>
+      <span class="token key atrule">second</span><span class="token punctuation">:</span> <span class="token number">40</span>
+      <span class="token key atrule">third</span><span class="token punctuation">:</span> <span class="token number">50</span>
+    <span class="token key atrule">math</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">131</span><span class="token punctuation">,</span><span class="token number">140</span><span class="token punctuation">,</span><span class="token number">148</span><span class="token punctuation">]</span>
+    <span class="token key atrule">chinese</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token key atrule">first</span><span class="token punctuation">:</span> <span class="token number">128</span><span class="token punctuation">,</span><span class="token key atrule">second</span><span class="token punctuation">:</span> <span class="token number">136</span><span class="token punctuation">}</span>
+  <span class="token key atrule">salarys</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">3999</span><span class="token punctuation">,</span><span class="token number">4999.98</span><span class="token punctuation">,</span><span class="token number">5999.99</span><span class="token punctuation">]</span>
+  <span class="token key atrule">allPets</span><span class="token punctuation">:</span>
+    <span class="token key atrule">sick</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> tom<span class="token punctuation">}</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> jerry<span class="token punctuation">,</span><span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">47</span><span class="token punctuation">}</span>
+    <span class="token key atrule">health</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> mario<span class="token punctuation">,</span><span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">47</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+</code></pre></div><h2 id="_2、配置提示"><a href="#_2、配置提示" class="header-anchor">#</a> 2、配置提示</h2> <p>自定义的类和配置文件绑定一般没有提示。</p> <div class="language-xml extra-class"><pre class="language-xml"><code>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-configuration-processor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>excludes</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclude</span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-configuration-processor<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclude</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>excludes</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-02-25
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E5%8E%9F%E7%90%86.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot-自动配置原理
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-数据访问
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html#_1、文件类型">1、文件类型</a><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html#_1-1、properties">1.1、properties</a></li></ul></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html#_2、配置提示">2、配置提示</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/csrsm-blog/posts/2020/01/21/springboot2-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/csrsm-blog/assets/js/app.454ee9d8.js" defer></script><script src="/csrsm-blog/assets/js/7.dcf110ed.js" defer></script><script src="/csrsm-blog/assets/js/42.c701cd24.js" defer></script>
+  </body>
+</html>
