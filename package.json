@@ -6,5 +6,6 @@
     "dependencies": {
         "vuepress": "^1.9.7",
         "vuepress-theme-meteorlxy": "^1.9.0"
-    }
+    },
+    "homepage": "https://csrsm.github.io/post-ci"
 }
