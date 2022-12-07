@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Install and Build   # 安装依赖、打包，如果提前已打包好无需这一步
-        uses: csrsm/post-ci@master
+        uses: JamesIves/github-pages-deploy-action@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: master
