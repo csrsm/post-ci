@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SpringBoot-单元测试 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/csrsm-blog/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/csrsm-blog/assets/css/0.styles.0012e2a3.css" as="style"><link rel="preload" href="/csrsm-blog/assets/js/app.acc1d91f.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/7.8eaaf042.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/36.bed5cd89.js" as="script"><link rel="prefetch" href="/csrsm-blog/assets/js/1.2e718cca.js"><link rel="prefetch" href="/csrsm-blog/assets/js/10.503da5e1.js"><link rel="prefetch" href="/csrsm-blog/assets/js/11.9d2fdfae.js"><link rel="prefetch" href="/csrsm-blog/assets/js/12.fcb21a1d.js"><link rel="prefetch" href="/csrsm-blog/assets/js/13.96503fd7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/14.20d93468.js"><link rel="prefetch" href="/csrsm-blog/assets/js/15.64bd5037.js"><link rel="prefetch" href="/csrsm-blog/assets/js/16.b9a58e29.js"><link rel="prefetch" href="/csrsm-blog/assets/js/17.d4868fcd.js"><link rel="prefetch" href="/csrsm-blog/assets/js/18.e106ea76.js"><link rel="prefetch" href="/csrsm-blog/assets/js/19.ebf1a903.js"><link rel="prefetch" href="/csrsm-blog/assets/js/20.0e2eae33.js"><link rel="prefetch" href="/csrsm-blog/assets/js/21.4752cac2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/22.0a18be31.js"><link rel="prefetch" href="/csrsm-blog/assets/js/23.000382ea.js"><link rel="prefetch" href="/csrsm-blog/assets/js/24.db68ac55.js"><link rel="prefetch" href="/csrsm-blog/assets/js/25.431855c5.js"><link rel="prefetch" href="/csrsm-blog/assets/js/26.dd3da43c.js"><link rel="prefetch" href="/csrsm-blog/assets/js/27.64c1a036.js"><link rel="prefetch" href="/csrsm-blog/assets/js/28.87cb6b0a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/29.a985dc98.js"><link rel="prefetch" href="/csrsm-blog/assets/js/3.ff189134.js"><link rel="prefetch" href="/csrsm-blog/assets/js/30.1ebe5aff.js"><link rel="prefetch" href="/csrsm-blog/assets/js/31.b371235e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/32.a1231124.js"><link rel="prefetch" href="/csrsm-blog/assets/js/33.d558d933.js"><link rel="prefetch" href="/csrsm-blog/assets/js/34.d7d644b4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/35.eb22c3ab.js"><link rel="prefetch" href="/csrsm-blog/assets/js/37.f8911c28.js"><link rel="prefetch" href="/csrsm-blog/assets/js/38.1ff48400.js"><link rel="prefetch" href="/csrsm-blog/assets/js/39.c6f256ac.js"><link rel="prefetch" href="/csrsm-blog/assets/js/4.326ff035.js"><link rel="prefetch" href="/csrsm-blog/assets/js/40.55598602.js"><link rel="prefetch" href="/csrsm-blog/assets/js/41.41fb4af9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/42.9fd7723b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/43.88e37717.js"><link rel="prefetch" href="/csrsm-blog/assets/js/44.2a443682.js"><link rel="prefetch" href="/csrsm-blog/assets/js/45.377399cb.js"><link rel="prefetch" href="/csrsm-blog/assets/js/46.a5414bf6.js"><link rel="prefetch" href="/csrsm-blog/assets/js/47.a43294de.js"><link rel="prefetch" href="/csrsm-blog/assets/js/48.8742461a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/49.b778b074.js"><link rel="prefetch" href="/csrsm-blog/assets/js/5.f96cd824.js"><link rel="prefetch" href="/csrsm-blog/assets/js/50.186a336f.js"><link rel="prefetch" href="/csrsm-blog/assets/js/6.562b2ef1.js"><link rel="prefetch" href="/csrsm-blog/assets/js/8.40f58b51.js"><link rel="prefetch" href="/csrsm-blog/assets/js/9.c8fcfbba.js">
+    <link rel="stylesheet" href="/csrsm-blog/assets/css/0.styles.0012e2a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/csrsm-blog/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/csrsm-blog/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/csrsm-blog/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          SpringBoot-单元测试
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-12-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot-原理解析
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-web.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-Web开发
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>单元测试  JUnit5</p> <h1 id="springboot2核心技术-单元测试"><a href="#springboot2核心技术-单元测试" class="header-anchor">#</a> SpringBoot2核心技术-单元测试</h1> <h1 id="单元测试"><a href="#单元测试" class="header-anchor">#</a> 单元测试</h1> <h1 id="_1、junit5-的变化"><a href="#_1、junit5-的变化" class="header-anchor">#</a> 1、JUnit5 的变化</h1> <p><strong>Spring Boot 2.2.0 版本开始引入 JUnit 5 作为单元测试默认库</strong></p> <p>作为最新版本的JUnit框架，JUnit5与之前版本的Junit框架有很大的不同。由三个不同子项目的几个不同模块组成。</p> <blockquote><p><strong>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</strong></p></blockquote> <p><strong>JUnit Platform</strong>: Junit Platform是在JVM上启动测试框架的基础，不仅支持Junit自制的测试引擎，其他测试引擎也都可以接入。</p> <p><strong>JUnit Jupiter</strong>: JUnit Jupiter提供了JUnit5的新的编程模型，是JUnit5新特性的核心。内部 包含了一个<strong>测试引擎</strong>，用于在Junit Platform上运行。</p> <p><strong>JUnit Vintage</strong>: 由于JUint已经发展多年，为了照顾老的项目，JUnit Vintage提供了兼容JUnit4.x,Junit3.x的测试引擎。</p> <p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606796395719-eb57ab48-ae44-45e5-8d2e-c4d507aff49a.png" alt="image"></p> <p>注意：</p> <p><strong>SpringBoot 2.4 以上版本移除了默认对 Vintage 的依赖。如果需要兼容junit4需要自行引入（不能使用junit4的功能 @Test）</strong></p> <p><strong>JUnit 5’s Vintage Engine Removed from</strong> <strong>spring-boot-starter-test,如果需要继续兼容junit4需要自行引入vintage</strong></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.junit.vintage&lt;/groupId&gt;
+    &lt;artifactId&gt;junit-vintage-engine&lt;/artifactId&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+            &lt;groupId&gt;org.hamcrest&lt;/groupId&gt;
+            &lt;artifactId&gt;hamcrest-core&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
+</code></pre></div><p><img src="https://cdn.nlark.com/yuque/0/2020/png/1354552/1606797616337-e73010e9-9cac-496d-a177-64b677af5a3d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_10%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10" alt="image.png"></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre></div><p>现在版本：</p> <div class="language- extra-class"><pre class="language-text"><code>@SpringBootTest
+class Boot05WebAdminApplicationTests {
+    @Test
+    void contextLoads() {
+    }
+}
+</code></pre></div><p>以前：</p> <p>@SpringBootTest + @RunWith(SpringTest.class)</p> <p>SpringBoot整合Junit以后。</p> <ul><li>编写测试方法：@Test标注（注意需要使用junit5版本的注解）</li> <li>Junit类具有Spring的功能，@Autowired、比如 @Transactional 标注测试方法，测试完成后自动回滚</li></ul> <h1 id="_2、junit5常用注解"><a href="#_2、junit5常用注解" class="header-anchor">#</a> 2、JUnit5常用注解</h1> <p>JUnit5的注解与JUnit4的注解有所变化</p> <p><a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations" target="_blank" rel="noopener noreferrer">https://junit.org/junit5/docs/current/user-guide/#writing-tests-annotations<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ul><li>**@Test 😗*表示方法是测试方法。但是与JUnit4的@Test不同，他的职责非常单一不能声明任何属性，拓展的测试将会由Jupiter提供额外测试</li> <li>**@ParameterizedTest 😗*表示方法是参数化测试，下方会有详细介绍</li> <li>**@RepeatedTest 😗*表示方法可重复执行，下方会有详细介绍</li> <li>**@DisplayName 😗*为测试类或者测试方法设置展示名称</li> <li>**@BeforeEach 😗*表示在每个单元测试之前执行</li> <li>**@AfterEach 😗*表示在每个单元测试之后执行</li> <li>**@BeforeAll 😗*表示在所有单元测试之前执行</li> <li>**@AfterAll 😗*表示在所有单元测试之后执行</li> <li>**@Tag 😗*表示单元测试类别，类似于JUnit4中的@Categories</li> <li>**@Disabled 😗*表示测试类或测试方法不执行，类似于JUnit4中的@Ignore</li> <li>**@Timeout 😗*表示测试方法运行如果超过了指定时间将会返回错误</li> <li>**@ExtendWith 😗*为测试类或测试方法提供扩展类引用</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import org.junit.jupiter.api.Test; //注意这里使用的是jupiter的Test注解！！
+public class TestDemo {
+  @Test
+  @DisplayName(&quot;第一次测试&quot;)
+  public void firstTest() {
+      System.out.println(&quot;hello world&quot;);
+  }
+</code></pre></div><h1 id="_3、断言-assertions"><a href="#_3、断言-assertions" class="header-anchor">#</a> 3、断言（assertions）</h1> <p>断言（assertions）是测试方法中的核心部分，用来对测试需要满足的条件进行验证。<strong>这些断言方法都是 org.junit.jupiter.api.Assertions 的静态方法</strong>。JUnit 5 内置的断言可以分成如下几个类别：</p> <p><strong>检查业务逻辑返回的数据是否合理。</strong></p> <p><strong>所有的测试运行结束以后，会有一个详细的测试报告；</strong></p> <h2 id="_1、简单断言"><a href="#_1、简单断言" class="header-anchor">#</a> 1、简单断言</h2> <p>用来对单个值进行简单的验证。如：</p> <table><thead><tr><th>方法</th> <th>说明</th></tr></thead> <tbody><tr><td>assertEquals</td> <td>判断两个对象或两个原始类型是否相等</td></tr> <tr><td>assertNotEquals</td> <td>判断两个对象或两个原始类型是否不相等</td></tr> <tr><td>assertSame</td> <td>判断两个对象引用是否指向同一个对象</td></tr> <tr><td>assertNotSame</td> <td>判断两个对象引用是否指向不同的对象</td></tr> <tr><td>assertTrue</td> <td>判断给定的布尔值是否为 true</td></tr> <tr><td>assertFalse</td> <td>判断给定的布尔值是否为 false</td></tr> <tr><td>assertNull</td> <td>判断给定的对象引用是否为 null</td></tr> <tr><td>assertNotNull</td> <td>判断给定的对象引用是否不为 null</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code>@Test
+@DisplayName(&quot;simple assertion&quot;)
+public void simple() {
+     assertEquals(3, 1 + 2, &quot;simple math&quot;);
+     assertNotEquals(3, 1 + 1);
+     assertNotSame(new Object(), new Object());
+     Object obj = new Object();
+     assertSame(obj, obj);
+     assertFalse(1 &gt; 2);
+     assertTrue(1 &lt; 2);
+     assertNull(null);
+     assertNotNull(new Object());
+}
+</code></pre></div><h2 id="_2、数组断言"><a href="#_2、数组断言" class="header-anchor">#</a> 2、数组断言</h2> <p>通过 assertArrayEquals 方法来判断两个对象或原始类型的数组是否相等</p> <div class="language- extra-class"><pre class="language-text"><code>@Test
+@DisplayName(&quot;array assertion&quot;)
+public void array() {
+ assertArrayEquals(new int[]{1, 2}, new int[] {1, 2});
+}
+</code></pre></div><h2 id="_3、组合断言"><a href="#_3、组合断言" class="header-anchor">#</a> 3、组合断言</h2> <p>assertAll 方法接受多个 org.junit.jupiter.api.Executable 函数式接口的实例作为要验证的断言，可以通过 lambda 表达式很容易的提供这些断言</p> <div class="language- extra-class"><pre class="language-text"><code>@Test
+@DisplayName(&quot;assert all&quot;)
+public void all() {
+ assertAll(&quot;Math&quot;,
+    () -&gt; assertEquals(2, 1 + 1),
+    () -&gt; assertTrue(1 &gt; 0)
+ );
+}
+</code></pre></div><h2 id="_4、异常断言"><a href="#_4、异常断言" class="header-anchor">#</a> 4、异常断言</h2> <p>在JUnit4时期，想要测试方法的异常情况时，需要用**@Rule<strong>注解的ExpectedException变量还是比较麻烦的。而JUnit5提供了一种新的断言方式</strong>Assertions.assertThrows()** ,配合函数式编程就可以进行使用。</p> <div class="language- extra-class"><pre class="language-text"><code>@Test
+@DisplayName(&quot;异常测试&quot;)
+public void exceptionTest() {
+    ArithmeticException exception = Assertions.assertThrows(
+           //扔出断言异常
+            ArithmeticException.class, () -&gt; System.out.println(1 % 0));
+}
+</code></pre></div><h2 id="_5、超时断言"><a href="#_5、超时断言" class="header-anchor">#</a> 5、超时断言</h2> <p>Junit5还提供了<strong>Assertions.assertTimeout()</strong> 为测试方法设置了超时时间</p> <div class="language- extra-class"><pre class="language-text"><code>@Test
+@DisplayName(&quot;超时测试&quot;)
+public void timeoutTest() {
+    //如果测试方法时间超过1s将会异常
+    Assertions.assertTimeout(Duration.ofMillis(1000), () -&gt; Thread.sleep(500));
+}
+</code></pre></div><h2 id="_6、快速失败"><a href="#_6、快速失败" class="header-anchor">#</a> 6、快速失败</h2> <p>通过 fail 方法直接使得测试失败</p> <div class="language- extra-class"><pre class="language-text"><code>@Test
+@DisplayName(&quot;fail&quot;)
+public void shouldFail() {
+ fail(&quot;This should fail&quot;);
+}
+</code></pre></div><h1 id="_4、前置条件-assumptions"><a href="#_4、前置条件-assumptions" class="header-anchor">#</a> 4、前置条件（assumptions）</h1> <p>JUnit 5 中的前置条件（<strong>assumptions【假设】</strong>）类似于断言，不同之处在于<strong>不满足的断言会使得测试方法失败</strong>，而不满足的<strong>前置条件只会使得测试方法的执行终止</strong>。前置条件可以看成是测试方法执行的前提，当该前提不满足时，就没有继续执行的必要。</p> <div class="language- extra-class"><pre class="language-text"><code>@DisplayName(&quot;前置条件&quot;)
+public class AssumptionsTest {
+ private final String environment = &quot;DEV&quot;;
+ @Test
+ @DisplayName(&quot;simple&quot;)
+ public void simpleAssume() {
+    assumeTrue(Objects.equals(this.environment, &quot;DEV&quot;));
+    assumeFalse(() -&gt; Objects.equals(this.environment, &quot;PROD&quot;));
+ }
+ @Test
+ @DisplayName(&quot;assume then do&quot;)
+ public void assumeThenDo() {
+    assumingThat(
+       Objects.equals(this.environment, &quot;DEV&quot;),
+       () -&gt; System.out.println(&quot;In DEV&quot;)
+    );
+ }
+}
+</code></pre></div><p>assumeTrue 和 assumFalse 确保给定的条件为 true 或 false，不满足条件会使得测试执行终止。assumingThat 的参数是表示条件的布尔值和对应的 Executable 接口的实现对象。只有条件满足时，Executable 对象才会被执行；当条件不满足时，测试执行并不会终止。</p> <h1 id="_5、嵌套测试"><a href="#_5、嵌套测试" class="header-anchor">#</a> 5、嵌套测试</h1> <p>JUnit 5 可以通过 Java 中的内部类和@Nested 注解实现嵌套测试，从而可以更好的把相关的测试方法组织在一起。在内部类中可以使用@BeforeEach 和@AfterEach 注解，而且嵌套的层次没有限制。</p> <div class="language- extra-class"><pre class="language-text"><code>@DisplayName(&quot;A stack&quot;)
+class TestingAStackDemo {
+    Stack&lt;Object&gt; stack;
+    @Test
+    @DisplayName(&quot;is instantiated with new Stack()&quot;)
+    void isInstantiatedWithNew() {
+        new Stack&lt;&gt;();
+    }
+    @Nested
+    @DisplayName(&quot;when new&quot;)
+    class WhenNew {
+        @BeforeEach
+        void createNewStack() {
+            stack = new Stack&lt;&gt;();
+        }
+        @Test
+        @DisplayName(&quot;is empty&quot;)
+        void isEmpty() {
+            assertTrue(stack.isEmpty());
+        }
+        @Test
+        @DisplayName(&quot;throws EmptyStackException when popped&quot;)
+        void throwsExceptionWhenPopped() {
+            assertThrows(EmptyStackException.class, stack::pop);
+        }
+        @Test
+        @DisplayName(&quot;throws EmptyStackException when peeked&quot;)
+        void throwsExceptionWhenPeeked() {
+            assertThrows(EmptyStackException.class, stack::peek);
+        }
+        @Nested
+        @DisplayName(&quot;after pushing an element&quot;)
+        class AfterPushing {
+            String anElement = &quot;an element&quot;;
+            @BeforeEach
+            void pushAnElement() {
+                stack.push(anElement);
+            }
+            @Test
+            @DisplayName(&quot;it is no longer empty&quot;)
+            void isNotEmpty() {
+                assertFalse(stack.isEmpty());
+            }
+            @Test
+            @DisplayName(&quot;returns the element when popped and is empty&quot;)
+            void returnElementWhenPopped() {
+                assertEquals(anElement, stack.pop());
+                assertTrue(stack.isEmpty());
+            }
+            @Test
+            @DisplayName(&quot;returns the element when peeked but remains not empty&quot;)
+            void returnElementWhenPeeked() {
+                assertEquals(anElement, stack.peek());
+                assertFalse(stack.isEmpty());
+            }
+        }
+    }
+}
+</code></pre></div><h1 id="_6、参数化测试"><a href="#_6、参数化测试" class="header-anchor">#</a> 6、参数化测试</h1> <p>参数化测试是JUnit5很重要的一个新特性，它使得用不同的参数多次运行测试成为了可能，也为我们的单元测试带来许多便利。</p> <p>利用**@ValueSource**等注解，指定入参，我们将可以使用不同的参数进行多次单元测试，而不需要每新增一个参数就新增一个单元测试，省去了很多冗余代码。</p> <p><strong>@ValueSource</strong>: 为参数化测试指定入参来源，支持八大基础类以及String类型,Class类型</p> <p><strong>@NullSource</strong>: 表示为参数化测试提供一个null的入参</p> <p><strong>@EnumSource</strong>: 表示为参数化测试提供一个枚举入参</p> <p><strong>@CsvFileSource</strong>：表示读取指定CSV文件内容作为参数化测试入参</p> <p><strong>@MethodSource</strong>：表示读取指定方法的返回值作为参数化测试入参(注意方法返回需要是一个流)</p> <blockquote><p>当然如果参数化测试仅仅只能做到指定普通的入参还达不到让我觉得惊艳的地步。让我真正感到他的强大之处的地方在于他可以支持外部的各类入参。如:CSV,YML,JSON 文件甚至方法的返回值也可以作为入参。只需要去实现<strong>ArgumentsProvider</strong>接口，任何外部文件都可以作为它的入参。</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>@ParameterizedTest
+@ValueSource(strings = {&quot;one&quot;, &quot;two&quot;, &quot;three&quot;})
+@DisplayName(&quot;参数化测试1&quot;)
+public void parameterizedTest1(String string) {
+    System.out.println(string);
+    Assertions.assertTrue(StringUtils.isNotBlank(string));
+}
+@ParameterizedTest
+@MethodSource(&quot;method&quot;)    //指定方法名
+@DisplayName(&quot;方法来源参数&quot;)
+public void testWithExplicitLocalMethodSource(String name) {
+    System.out.println(name);
+    Assertions.assertNotNull(name);
+}
+static Stream&lt;String&gt; method() {
+    return Stream.of(&quot;apple&quot;, &quot;banana&quot;);
+}
+</code></pre></div><h1 id="_7、迁移指南"><a href="#_7、迁移指南" class="header-anchor">#</a> 7、迁移指南</h1> <p>在进行迁移的时候需要注意如下的变化：</p> <ul><li>注解在 org.junit.jupiter.api 包中，断言在 org.junit.jupiter.api.Assertions 类中，前置条件在 org.junit.jupiter.api.Assumptions 类中。</li> <li>把@Before 和@After 替换成@BeforeEach 和@AfterEach。</li> <li>把@BeforeClass 和@AfterClass 替换成@BeforeAll 和@AfterAll。</li> <li>把@Ignore 替换成@Disabled。</li> <li>把@Category 替换成@Tag。</li> <li>把@RunWith、@Rule 和@ClassRule 替换成@ExtendWith。</li></ul></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2020-01-21
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-12-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2020/01/21/springboot2-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90.html" class="post-link" data-v-4e23451f>
+      上一篇 : SpringBoot-原理解析
+    </a> <a href="/csrsm-blog/posts/2020/01/21/springboot2-web.html" class="post-link" data-v-4e23451f>
+      下一篇 : SpringBoot-Web开发
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-test.html#_1、简单断言">1、简单断言</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-test.html#_2、数组断言">2、数组断言</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-test.html#_3、组合断言">3、组合断言</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-test.html#_4、异常断言">4、异常断言</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-test.html#_5、超时断言">5、超时断言</a></li><li><a href="/csrsm-blog/posts/2020/01/21/springboot2-test.html#_6、快速失败">6、快速失败</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/csrsm-blog/posts/2020/01/21/springboot2-test.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/csrsm-blog/assets/js/app.acc1d91f.js" defer></script><script src="/csrsm-blog/assets/js/7.8eaaf042.js" defer></script><script src="/csrsm-blog/assets/js/36.bed5cd89.js" defer></script>
+  </body>
+</html>

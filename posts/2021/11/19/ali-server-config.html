@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>修改阿里云服务器ssh端口 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/csrsm-blog/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/csrsm-blog/assets/css/0.styles.0012e2a3.css" as="style"><link rel="preload" href="/csrsm-blog/assets/js/app.acc1d91f.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/7.8eaaf042.js" as="script"><link rel="preload" href="/csrsm-blog/assets/js/16.b9a58e29.js" as="script"><link rel="prefetch" href="/csrsm-blog/assets/js/1.2e718cca.js"><link rel="prefetch" href="/csrsm-blog/assets/js/10.503da5e1.js"><link rel="prefetch" href="/csrsm-blog/assets/js/11.9d2fdfae.js"><link rel="prefetch" href="/csrsm-blog/assets/js/12.fcb21a1d.js"><link rel="prefetch" href="/csrsm-blog/assets/js/13.96503fd7.js"><link rel="prefetch" href="/csrsm-blog/assets/js/14.20d93468.js"><link rel="prefetch" href="/csrsm-blog/assets/js/15.64bd5037.js"><link rel="prefetch" href="/csrsm-blog/assets/js/17.d4868fcd.js"><link rel="prefetch" href="/csrsm-blog/assets/js/18.e106ea76.js"><link rel="prefetch" href="/csrsm-blog/assets/js/19.ebf1a903.js"><link rel="prefetch" href="/csrsm-blog/assets/js/20.0e2eae33.js"><link rel="prefetch" href="/csrsm-blog/assets/js/21.4752cac2.js"><link rel="prefetch" href="/csrsm-blog/assets/js/22.0a18be31.js"><link rel="prefetch" href="/csrsm-blog/assets/js/23.000382ea.js"><link rel="prefetch" href="/csrsm-blog/assets/js/24.db68ac55.js"><link rel="prefetch" href="/csrsm-blog/assets/js/25.431855c5.js"><link rel="prefetch" href="/csrsm-blog/assets/js/26.dd3da43c.js"><link rel="prefetch" href="/csrsm-blog/assets/js/27.64c1a036.js"><link rel="prefetch" href="/csrsm-blog/assets/js/28.87cb6b0a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/29.a985dc98.js"><link rel="prefetch" href="/csrsm-blog/assets/js/3.ff189134.js"><link rel="prefetch" href="/csrsm-blog/assets/js/30.1ebe5aff.js"><link rel="prefetch" href="/csrsm-blog/assets/js/31.b371235e.js"><link rel="prefetch" href="/csrsm-blog/assets/js/32.a1231124.js"><link rel="prefetch" href="/csrsm-blog/assets/js/33.d558d933.js"><link rel="prefetch" href="/csrsm-blog/assets/js/34.d7d644b4.js"><link rel="prefetch" href="/csrsm-blog/assets/js/35.eb22c3ab.js"><link rel="prefetch" href="/csrsm-blog/assets/js/36.bed5cd89.js"><link rel="prefetch" href="/csrsm-blog/assets/js/37.f8911c28.js"><link rel="prefetch" href="/csrsm-blog/assets/js/38.1ff48400.js"><link rel="prefetch" href="/csrsm-blog/assets/js/39.c6f256ac.js"><link rel="prefetch" href="/csrsm-blog/assets/js/4.326ff035.js"><link rel="prefetch" href="/csrsm-blog/assets/js/40.55598602.js"><link rel="prefetch" href="/csrsm-blog/assets/js/41.41fb4af9.js"><link rel="prefetch" href="/csrsm-blog/assets/js/42.9fd7723b.js"><link rel="prefetch" href="/csrsm-blog/assets/js/43.88e37717.js"><link rel="prefetch" href="/csrsm-blog/assets/js/44.2a443682.js"><link rel="prefetch" href="/csrsm-blog/assets/js/45.377399cb.js"><link rel="prefetch" href="/csrsm-blog/assets/js/46.a5414bf6.js"><link rel="prefetch" href="/csrsm-blog/assets/js/47.a43294de.js"><link rel="prefetch" href="/csrsm-blog/assets/js/48.8742461a.js"><link rel="prefetch" href="/csrsm-blog/assets/js/49.b778b074.js"><link rel="prefetch" href="/csrsm-blog/assets/js/5.f96cd824.js"><link rel="prefetch" href="/csrsm-blog/assets/js/50.186a336f.js"><link rel="prefetch" href="/csrsm-blog/assets/js/6.562b2ef1.js"><link rel="prefetch" href="/csrsm-blog/assets/js/8.40f58b51.js"><link rel="prefetch" href="/csrsm-blog/assets/js/9.c8fcfbba.js">
+    <link rel="stylesheet" href="/csrsm-blog/assets/css/0.styles.0012e2a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/csrsm-blog/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/csrsm-blog/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/csrsm-blog/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          修改阿里云服务器ssh端口
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2021-11-19
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-12-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2021/01/21/change-datasource.html" class="post-link" data-v-4e23451f>
+      上一篇 : Mybatis多数据源切换
+    </a> <a href="/csrsm-blog/posts/2021/11/19/linux-shell.html" class="post-link" data-v-4e23451f>
+      下一篇 : Linux常用命令
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>修改阿里云服务器ssh端口</p> <h1 id="修改阿里云服务器ssh端口"><a href="#修改阿里云服务器ssh端口" class="header-anchor">#</a> 修改阿里云服务器ssh端口</h1> <p>今天发现有人对我的阿里云服务器进行了攻击,虽然自己使用了强密码 但感觉还是有点不放心,决定限制只能通过密钥访问,并更换ssh连接端口</p> <h2 id="_1-生成密钥对"><a href="#_1-生成密钥对" class="header-anchor">#</a> 1.生成密钥对</h2> <p>首先是正常登陆 在服务器上制作密钥对,执行以下命令</p> <div class="language- extra-class"><pre class="language-text"><code>ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot;     &lt;==后面填写的是邮箱
+</code></pre></div><p>首先提示的是密钥保存路径，此处可以直接Enter(默认/root/.ssh/文件下)。第二步和第三步是提示输入密钥锁码，我也直接Enter留空（当然为了私钥安全也可以输入密码）。
+这样密钥对就生成成功了</p> <div class="language-查看公钥 extra-class"><pre class="language-text"><code>Your identification has been saved in /root/.ssh/id_rsa. &lt;== 私钥
+Your public key has been saved in /root/.ssh/id_rsa.pub. &lt;== 公钥
+</code></pre></div><p>查看公钥</p> <div class="language- extra-class"><pre class="language-text"><code>cat ~/.ssh/id_rsa.pub
+</code></pre></div><h2 id="_2-在服务器上安装公钥"><a href="#_2-在服务器上安装公钥" class="header-anchor">#</a> 2.在服务器上安装公钥</h2> <p>这一步操作在~/.ssh目录下操，作为了确保执行成功 先执行上面两个命令,设置文件权限。</p> <div class="language- extra-class"><pre class="language-text"><code>chmod 600 authorized_keys
+chmod 700 ~/.ssh
+cat id_rsa.pub &gt;&gt; authorized_keys     &lt;== 安装公钥
+</code></pre></div><h2 id="_3-编辑-etc-ssh-sshd-config-文件"><a href="#_3-编辑-etc-ssh-sshd-config-文件" class="header-anchor">#</a> 3.编辑 /etc/ssh/sshd_config 文件</h2> <div class="language- extra-class"><pre class="language-text"><code>RSAAuthentication yes
+PubkeyAuthentication yes
+PermitRootLogin yes   &lt;==root能否通过ssh登录
+</code></pre></div><p>重启ssh服务</p> <div class="language- extra-class"><pre class="language-text"><code>systemctl restart sshd.service
+</code></pre></div><h2 id="_4-下载私钥文件"><a href="#_4-下载私钥文件" class="header-anchor">#</a> 4.下载私钥文件</h2> <p>将私钥文件 id_rsa 通过FTP等方式下载到本地机器上,测试密钥登录是否成功,推荐使用Xshell。 登录成功后回到sshd_config文件，设置禁用密码登陆！</p> <div class="language- extra-class"><pre class="language-text"><code>PasswordAuthentication no
+</code></pre></div><p>小心保管好私钥文件，这将是你连接服务器的唯一凭据！</p> <h2 id="_5-修改ssh端口"><a href="#_5-修改ssh端口" class="header-anchor">#</a> 5.修改SSH端口</h2> <p>还是修改 /etc/ssh/sshd_config，找到Port 22，为稳妥起见，我们先是使用多个端口连接，比如在Port 22在下面添加一行：Port 25，就增加了一个新的连接端口25 重启SSH服务后测试ssh连接：</p> <div class="language- extra-class"><pre class="language-text"><code>systemctl restart sshd.service          &lt;==重启SSH服务
+ssh localhost -p 你的端口号    &lt;==本机上测试ssh连接
+</code></pre></div><p>centOS7防火墙默认关闭</p> <div class="language- extra-class"><pre class="language-text"><code>// 查看已开启的端口
+firewall-cmd --list-ports
+// 查看防火墙状态
+firewall-cmd --state
+// 开启防火墙
+systemctl start firewalld
+// 开启端口
+firewall-cmd --zone=public --add-port=8888/tcp --permanent
+// 删除端口
+firewall-cmd --zone=public --remove-port=8888/tcp --permanent
+// 重启防火墙
+firewall-cmd --reload
+</code></pre></div><p>此处可以使用semanage工具管理对端口、消息接口和网络接口等 配置</p> <p>安装命令如下：</p> <div class="language- extra-class"><pre class="language-text"><code>yum install semanage
+// 如果提示No package semanage available.
+// 执行如下命令：
+yum provides semanage 
+yum -y install policycoreutils-python.x86_64
+</code></pre></div><p>配置ssh端口命令如下</p> <div class="language- extra-class"><pre class="language-text"><code>// 查看ssh端口
+semanage port -l|grep ssh
+// 增加ssh端口
+semanage port -a -t ssh_port_t -p tcp 8888
+</code></pre></div><h2 id="_6-修改阿里云安全策略"><a href="#_6-修改阿里云安全策略" class="header-anchor">#</a> 6.修改阿里云安全策略</h2> <p>在控制台处，修改防火墙策略，自定义TCP连接端口。</p> <h2 id="_7-阿里云相关配置记录"><a href="#_7-阿里云相关配置记录" class="header-anchor">#</a> 7.阿里云相关配置记录</h2> <p>注意：轻量服务器只能通过私钥连接，密码登陆已关闭，ssh端口为2451</p> <h3 id="_1-mysql"><a href="#_1-mysql" class="header-anchor">#</a> （1）mysql</h3> <ul><li><p>用户名密码：root/ cuiming@123</p></li> <li><p>远程连接密码：Cuiming@123</p></li> <li><p>端口：3323</p></li> <li><p>允许所有人远程连接mysql</p> <div class="language- extra-class"><pre class="language-text"><code>– 允许所有远程连接到root权限下的所有数据库
+grant all privileges on *.* to root@&quot;%&quot; identified by '数据库密码';
+– 刷新(必要执行的语句)
+flush privileges;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>修改mysql root用户密码步骤：
+1.vim /etc/my.cnf   #find / -name &quot;my.cnf&quot;
+2.找到该文件中的[mysqld]，在下面插入一行：skip-grant-tables  #跳过密码登陆
+3.重启mysql服务器 service mysqld restart
+4.mysql –uroot –p 回车键
+5.mysql &gt; use mysql  
+  mysql &gt; UPDATE user SET password = password(‘新密码’) WHERE User = ‘root’;
+6.mysql&gt; flush privileges
+7.vim /etc/my.cnf 删除skip-grant-tables
+8.重启mysql服务器 service mysqld restart
+</code></pre></div></li></ul></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2021-11-19
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2022-12-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/csrsm-blog/posts/2021/01/21/change-datasource.html" class="post-link" data-v-4e23451f>
+      上一篇 : Mybatis多数据源切换
+    </a> <a href="/csrsm-blog/posts/2021/11/19/linux-shell.html" class="post-link" data-v-4e23451f>
+      下一篇 : Linux常用命令
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_1-生成密钥对">1.生成密钥对</a></li><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_2-在服务器上安装公钥">2.在服务器上安装公钥</a></li><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_3-编辑-etc-ssh-sshd-config-文件">3.编辑 /etc/ssh/sshd_config 文件</a></li><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_4-下载私钥文件">4.下载私钥文件</a></li><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_5-修改ssh端口">5.修改SSH端口</a></li><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_6-修改阿里云安全策略">6.修改阿里云安全策略</a></li><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_7-阿里云相关配置记录">7.阿里云相关配置记录</a><ul><li><a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#_1-mysql">（1）mysql</a></li></ul></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/csrsm-blog/posts/2021/11/19/ali-server-config.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/csrsm-blog/assets/js/app.acc1d91f.js" defer></script><script src="/csrsm-blog/assets/js/7.8eaaf042.js" defer></script><script src="/csrsm-blog/assets/js/16.b9a58e29.js" defer></script>
+  </body>
+</html>
