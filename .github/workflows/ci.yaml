@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout  ️ # 将代码拉取到虚拟机
-        uses: actions/checkout@master
+        uses: csrsm/post-ci@master
 
       - name: Install and Build   # 安装依赖、打包，如果提前已打包好无需这一步
         uses: JamesIves/github-pages-deploy-action@v4
