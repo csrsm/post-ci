@@ -10,12 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout  ️ # 将代码拉取到虚拟机
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        # 配置 Node 执行环境（当前构建的服务器默认没有 Node 环境，可以通过 Action 安装 Node）
+        # https://github.com/actions/setup-node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
 
       - name: Install and Build   # 安装依赖、打包，如果提前已打包好无需这一步
-        uses: JamesIves/github-pages-deploy-action@v4
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: ci-deploy
-          FOLDER: dist
-          BUILD_SCRIPT: npm install && npm run build
+          # 安装 Node 之后就可以执行构建脚本
+        run: |
+          npm install yarn -g
+          yarn
+          yarn build
+
+      - name: Deploy
+        # 将构建产物 commit 到一个分支上，用于发布静态站点资源
+        # https://github.com/peaceiris/actions-gh-pages
+        uses: csrsm/post-ci@master
+        with:
+          # Github 会在 workflow 中自动生成 GIHUBT_TOKEN，用于认证 workflow 的运行
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          # 静态资源目录设置
+          publish_dir: ./dist
+          # 默认发布到 gh-pages 分支上，可以指定特定的发布分支（不能选拉取代码的分支）
+          publish_branch: gh-pages
+
