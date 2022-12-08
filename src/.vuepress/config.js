@@ -11,7 +11,7 @@ module.exports = {
     ],
     dest: './dist',
 
-    base:'/csrsm-blog/',
+    base:'/post-ci/',
   
     // 网站语言
     locales: {
