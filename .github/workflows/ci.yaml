@@ -7,7 +7,7 @@ on:
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout  ️ # 将代码拉取到虚拟机
         uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
       - name: Deploy
         # 将构建产物 commit 到一个分支上，用于发布静态站点资源
         # https://github.com/peaceiris/actions-gh-pages
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # 部署后提交到那个分支
           folder: dist # 这里填打包好的目录名称
