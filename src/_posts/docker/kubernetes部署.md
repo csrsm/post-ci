@@ -3,10 +3,10 @@ category: csrsm
 title: Kubernetes部署
 header-title: true
 header-image:
-- http://img.icoisini.xyz/background.jpg
-  tags:
-- k8s
-  date: 2022-2-13
+  - http://img.icoisini.xyz/background.jpg
+tags:
+  - k8s
+date: 2022-2-13
 ---
 
 # Kubernetes部署 

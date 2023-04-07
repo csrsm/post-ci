@@ -3,13 +3,15 @@ category: csrsm
 title: Kubernetes YAML详解
 header-title: true
 header-image:
-- http://img.icoisini.xyz/background.jpg
-  tags:
-- k8s
-  date: 2022-2-13
+  - http://img.icoisini.xyz/background.jpg
+tags:
+  - k8s
+date: 2022-2-13
 ---
 
-Kubernetes YAML详解
+
+
+# Kubernetes YAML详解
 ``` yaml
 # yaml格式的pod定义文件完整内容：
 apiVersion: v1       #必选，版本号，例如v1
