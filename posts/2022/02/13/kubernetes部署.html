@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kubernetes部署 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/post-ci/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/post-ci/assets/css/0.styles.0012e2a3.css" as="style"><link rel="preload" href="/post-ci/assets/js/app.03c0fc85.js" as="script"><link rel="preload" href="/post-ci/assets/js/7.8eaaf042.js" as="script"><link rel="preload" href="/post-ci/assets/js/22.e81cf84c.js" as="script"><link rel="prefetch" href="/post-ci/assets/js/1.2e718cca.js"><link rel="prefetch" href="/post-ci/assets/js/10.503da5e1.js"><link rel="prefetch" href="/post-ci/assets/js/11.9d2fdfae.js"><link rel="prefetch" href="/post-ci/assets/js/12.fcb21a1d.js"><link rel="prefetch" href="/post-ci/assets/js/13.96503fd7.js"><link rel="prefetch" href="/post-ci/assets/js/14.20d93468.js"><link rel="prefetch" href="/post-ci/assets/js/15.64bd5037.js"><link rel="prefetch" href="/post-ci/assets/js/16.b9a58e29.js"><link rel="prefetch" href="/post-ci/assets/js/17.d4868fcd.js"><link rel="prefetch" href="/post-ci/assets/js/18.e106ea76.js"><link rel="prefetch" href="/post-ci/assets/js/19.ba082e3d.js"><link rel="prefetch" href="/post-ci/assets/js/20.5390231e.js"><link rel="prefetch" href="/post-ci/assets/js/21.0af97ba4.js"><link rel="prefetch" href="/post-ci/assets/js/23.d5ded878.js"><link rel="prefetch" href="/post-ci/assets/js/24.2bbbae87.js"><link rel="prefetch" href="/post-ci/assets/js/25.e2d55e6c.js"><link rel="prefetch" href="/post-ci/assets/js/26.c558f617.js"><link rel="prefetch" href="/post-ci/assets/js/27.99532eb6.js"><link rel="prefetch" href="/post-ci/assets/js/28.81cd58c0.js"><link rel="prefetch" href="/post-ci/assets/js/29.4582f374.js"><link rel="prefetch" href="/post-ci/assets/js/3.ff189134.js"><link rel="prefetch" href="/post-ci/assets/js/30.2a3a3f73.js"><link rel="prefetch" href="/post-ci/assets/js/31.7771bfec.js"><link rel="prefetch" href="/post-ci/assets/js/32.f8e0f22f.js"><link rel="prefetch" href="/post-ci/assets/js/33.a24a8592.js"><link rel="prefetch" href="/post-ci/assets/js/34.eeb4d13d.js"><link rel="prefetch" href="/post-ci/assets/js/35.879e0644.js"><link rel="prefetch" href="/post-ci/assets/js/36.1e299ae3.js"><link rel="prefetch" href="/post-ci/assets/js/37.793ff276.js"><link rel="prefetch" href="/post-ci/assets/js/38.27efddc4.js"><link rel="prefetch" href="/post-ci/assets/js/39.305a171b.js"><link rel="prefetch" href="/post-ci/assets/js/4.326ff035.js"><link rel="prefetch" href="/post-ci/assets/js/40.1edf8e23.js"><link rel="prefetch" href="/post-ci/assets/js/41.6665ba8b.js"><link rel="prefetch" href="/post-ci/assets/js/42.2e095cc9.js"><link rel="prefetch" href="/post-ci/assets/js/43.d927bbbc.js"><link rel="prefetch" href="/post-ci/assets/js/44.94a16f7a.js"><link rel="prefetch" href="/post-ci/assets/js/45.085356d4.js"><link rel="prefetch" href="/post-ci/assets/js/46.b04855cb.js"><link rel="prefetch" href="/post-ci/assets/js/47.bcd20207.js"><link rel="prefetch" href="/post-ci/assets/js/48.8326f4b6.js"><link rel="prefetch" href="/post-ci/assets/js/49.3b77cb10.js"><link rel="prefetch" href="/post-ci/assets/js/5.f96cd824.js"><link rel="prefetch" href="/post-ci/assets/js/50.6c45103f.js"><link rel="prefetch" href="/post-ci/assets/js/51.64d37030.js"><link rel="prefetch" href="/post-ci/assets/js/52.2e4338b7.js"><link rel="prefetch" href="/post-ci/assets/js/53.2152b72c.js"><link rel="prefetch" href="/post-ci/assets/js/54.c11e1493.js"><link rel="prefetch" href="/post-ci/assets/js/55.d1e6a60f.js"><link rel="prefetch" href="/post-ci/assets/js/6.562b2ef1.js"><link rel="prefetch" href="/post-ci/assets/js/8.40f58b51.js"><link rel="prefetch" href="/post-ci/assets/js/9.c8fcfbba.js">
+    <link rel="stylesheet" href="/post-ci/assets/css/0.styles.0012e2a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/post-ci/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/post-ci/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/post-ci/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Kubernetes部署
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2022-02-13
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2023-04-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/post-ci/posts/2022/02/13/%E5%AE%B9%E5%99%A8%E9%9A%94%E7%A6%BB%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.html" class="post-link" data-v-4e23451f>
+      上一篇 : 容器隔离核心技术
+    </a> <a href="/post-ci/posts/2022/02/13/kubernetes%E5%91%BD%E4%BB%A4.html" class="post-link" data-v-4e23451f>
+      下一篇 : Kubernetes命令
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="kubernetes部署"><a href="#kubernetes部署" class="header-anchor">#</a> Kubernetes部署</h1> <p>centos7环境</p> <h2 id="确保每个节点上-mac-地址和-product-uuid-的唯一性"><a href="#确保每个节点上-mac-地址和-product-uuid-的唯一性" class="header-anchor">#</a> 确保每个节点上 MAC 地址和 product_uuid 的唯一性</h2> <h2 id="关闭防火墙"><a href="#关闭防火墙" class="header-anchor">#</a> 关闭防火墙</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl disable --now firewalld
+</code></pre></div><h2 id="允许-iptables-检查桥接流量"><a href="#允许-iptables-检查桥接流量" class="header-anchor">#</a> 允许 iptables 检查桥接流量</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/modules-load.d/k8s.conf</span>
+br_netfilter
+EOF</span>
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/sysctl.d/k8s.conf</span>
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF</span>
+<span class="token function">sudo</span> sysctl --system
+</code></pre></div><h2 id="安装docker"><a href="#安装docker" class="header-anchor">#</a> 安装Docker</h2> <h2 id="关闭swap分区"><a href="#关闭swap分区" class="header-anchor">#</a> 关闭swap分区</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>swapoff -a <span class="token comment">#临时</span>
+<span class="token function">sed</span> -i <span class="token string">'/ swap / s/^\(.*\)$/#\1/g'</span> /etc/fstab <span class="token comment">#永久</span>
+</code></pre></div><h2 id="设置主机名称"><a href="#设置主机名称" class="header-anchor">#</a> 设置主机名称</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ hostnamectl set-hostname k8s-master
+$ hostnamectl set-hostname k8s-node1
+$ hostnamectl set-hostname k8s-node2
+<span class="token function">cat</span> <span class="token operator">&gt;&gt;</span> /etc/hosts <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+192.168.184.137 k8s-master
+192.168.184.138 k8s-node1
+192.168.184.139 k8s-node2
+EOF</span>
+</code></pre></div><h2 id="同步时间"><a href="#同步时间" class="header-anchor">#</a> 同步时间</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> -y ntpdate
+ntpdate time.windows.com
+</code></pre></div><h2 id="阿里源"><a href="#阿里源" class="header-anchor">#</a> 阿里源</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/yum.repos.d/kubernetes.repo <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF</span>
+</code></pre></div><h2 id="禁用selinux"><a href="#禁用selinux" class="header-anchor">#</a> 禁用SELinux</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>setenforce <span class="token number">0</span>
+<span class="token function">sed</span> -i <span class="token string">'s/^SELINUX=enforcing$/SELINUX=permissive/'</span> /etc/selinux/config
+</code></pre></div><h2 id="安装kubeadm、kubelet和kubectl"><a href="#安装kubeadm、kubelet和kubectl" class="header-anchor">#</a> 安装Kubeadm、Kubelet和Kubectl</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
+systemctl <span class="token builtin class-name">enable</span> kubelet
+</code></pre></div><h2 id="部署kubernetes-master"><a href="#部署kubernetes-master" class="header-anchor">#</a> 部署Kubernetes Master</h2> <p>--apiserver-advertise-address 是Master节点ip</p> <p>--pod-network-cidr如果网络插件安装kube-flannel，则为10.244.0.0/16，如果网络插件安装Calico ，则为192.168.0.0/16</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubeadm init --apiserver-advertise-address<span class="token operator">=</span><span class="token number">192.168</span>.184.137 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.18.0 --service-cidr<span class="token operator">=</span><span class="token number">10.1</span>.0.0/16 --pod-network-cidr<span class="token operator">=</span><span class="token number">10.244</span>.0.0/16
+</code></pre></div><p>输出如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Your Kubernetes control-plane has initialized successfully<span class="token operator">!</span>
+To start using your cluster, you need to run the following as a regular user:
+  <span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/.kube
+  <span class="token function">sudo</span> <span class="token function">cp</span> -i /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+  <span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -u<span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -g<span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
+You should now deploy a pod network to the cluster.
+Run <span class="token string">&quot;kubectl apply -f [podnetwork].yaml&quot;</span> with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+Then you can <span class="token function">join</span> any number of worker nodes by running the following on each as root:
+kubeadm <span class="token function">join</span> <span class="token number">192.168</span>.184.137:6443 --token 60097g.611f9xsw0886dgn3 <span class="token punctuation">\</span>
+    --discovery-token-ca-cert-hash sha256:019015dc17e97d767dc778d41cf18932ae6092986fe3a644ff9d3121dae0d074
+<span class="token function">stat</span> /var/lib/calico/nodename: no such <span class="token function">file</span> or directory: check that the calico/node container is running and has mounted /var/lib/calico/
+</code></pre></div><p>后续需要用到 kubeadm join 192.168.184.137:6443 --token XXX --discovery-token-ca-cert-hash sha256:XXX</p> <p>要使非 root 用户可以运行 kubectl，请运行以下命令， 它们也是 <code>kubeadm init</code> 输出的一部分：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/.kube
+<span class="token function">sudo</span> <span class="token function">cp</span> -i /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+<span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -u<span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -g<span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
+</code></pre></div><p>或者，如果你是 <code>root</code> 用户，则可以运行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable">KUBECONFIG</span><span class="token operator">=</span>/etc/kubernetes/admin.conf
+<span class="token function">cat</span> <span class="token operator">&gt;&gt;</span> /etc/profile <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+export KUBECONFIG=/etc/kubernetes/admin.conf
+EOF</span>
+</code></pre></div><h2 id="安装网络插件"><a href="#安装网络插件" class="header-anchor">#</a> 安装网络插件</h2> <p>只需要在master上执行</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">wget</span> https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f kube-flannel.yml
+</code></pre></div><p>卸载插件</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl delete -f xxx.yaml
+</code></pre></div><h2 id="加入kubernetes-node"><a href="#加入kubernetes-node" class="header-anchor">#</a> 加入Kubernetes Node</h2> <p>kubeadm init 会返回该命令，在工作节点上执行该命令</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubeadm <span class="token function">join</span> <span class="token operator">&lt;</span>control-plane-host<span class="token operator">&gt;</span>:<span class="token operator">&lt;</span>control-plane-port<span class="token operator">&gt;</span> --token <span class="token operator">&lt;</span>token<span class="token operator">&gt;</span> --discovery-token-ca-cert-hash sha256:<span class="token operator">&lt;</span>hash<span class="token operator">&gt;</span>
+</code></pre></div><div class="language-bash extra-class"><pre class="language-bash"><code>kubeadm get nodes <span class="token comment">#查看是否添加成功，在master节点</span>
+</code></pre></div><h2 id="测试kubernetes集群"><a href="#测试kubernetes集群" class="header-anchor">#</a> 测试Kubernetes集群</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>root@k8s-master ~<span class="token punctuation">]</span><span class="token comment"># kubectl create deployment nginx --image=nginx</span>
+deployment.apps/nginx created
+<span class="token punctuation">[</span>root@k8s-master ~<span class="token punctuation">]</span><span class="token comment"># kubectl expose deployment nginx --port=80 --type=NodePort</span>
+service/nginx exposed
+<span class="token punctuation">[</span>root@k8s-master ~<span class="token punctuation">]</span><span class="token comment"># kubectl get pods,svc</span>
+NAME READY STATUS RESTARTS AGE
+pod/nginx-554b9c67f9-wf5lm <span class="token number">1</span>/1 Running <span class="token number">0</span> 24s
+NAME TYPE CLUSTER-IP EXTERNAL-IP PORT<span class="token punctuation">(</span>S<span class="token punctuation">)</span> AGE
+service/kubernetes ClusterIP <span class="token number">10.1</span>.0.1 <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span> <span class="token number">443</span>/TCP 39m
+service/nginx NodePort <span class="token number">10.1</span>.224.251 <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span> <span class="token number">80</span>:31745/TCP <span class="token number">9</span>
+</code></pre></div><p>访问 192.168.184.137:31745</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get services
+kubectl get deployment
+kubectl get pods
+kubectl delete <span class="token function">service</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+kubectl delete deployment <span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+</code></pre></div><h2 id="查看pod运行问题"><a href="#查看pod运行问题" class="header-anchor">#</a> 查看Pod运行问题</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl describe pods -n <span class="token punctuation">[</span>namespace<span class="token punctuation">]</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span>
+<span class="token comment">#例 kubectl describe pods -n kube-system coredns-5bfd685c78-mmjxc</span>
+<span class="token comment">#例 kubectl describe pod nginx-f89759699-9vpkg </span>
+</code></pre></div><h1 id="kubernetes卸载"><a href="#kubernetes卸载" class="header-anchor">#</a> Kubernetes卸载</h1> <p>前提网络插件安装无问题，网络连通无问题</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 卸载服务</span>
+kubeadm reset
+<span class="token comment"># 删除rpm包</span>
+<span class="token function">rpm</span> -qa<span class="token operator">|</span><span class="token function">grep</span> kube*<span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">rpm</span> --nodeps -e
+<span class="token comment"># 删除容器及镜像</span>
+<span class="token function">docker</span> images -qa<span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">docker</span> rmi -f
+</code></pre></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2022-02-13
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2023-04-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/post-ci/posts/2022/02/13/%E5%AE%B9%E5%99%A8%E9%9A%94%E7%A6%BB%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.html" class="post-link" data-v-4e23451f>
+      上一篇 : 容器隔离核心技术
+    </a> <a href="/post-ci/posts/2022/02/13/kubernetes%E5%91%BD%E4%BB%A4.html" class="post-link" data-v-4e23451f>
+      下一篇 : Kubernetes命令
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#确保每个节点上-mac-地址和-product-uuid-的唯一性">确保每个节点上 MAC 地址和 product_uuid 的唯一性</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#关闭防火墙">关闭防火墙</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#允许-iptables-检查桥接流量">允许 iptables 检查桥接流量</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#安装docker">安装Docker</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#关闭swap分区">关闭swap分区</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#设置主机名称">设置主机名称</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#同步时间">同步时间</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#阿里源">阿里源</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#禁用selinux">禁用SELinux</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#安装kubeadm、kubelet和kubectl">安装Kubeadm、Kubelet和Kubectl</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#部署kubernetes-master">部署Kubernetes Master</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#安装网络插件">安装网络插件</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#加入kubernetes-node">加入Kubernetes Node</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#测试kubernetes集群">测试Kubernetes集群</a></li><li><a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#查看pod运行问题">查看Pod运行问题</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/post-ci/posts/2022/02/13/kubernetes%E9%83%A8%E7%BD%B2.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/post-ci/assets/js/app.03c0fc85.js" defer></script><script src="/post-ci/assets/js/7.8eaaf042.js" defer></script><script src="/post-ci/assets/js/22.e81cf84c.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kubernetes YAML详解 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/post-ci/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/post-ci/assets/css/0.styles.0012e2a3.css" as="style"><link rel="preload" href="/post-ci/assets/js/app.03c0fc85.js" as="script"><link rel="preload" href="/post-ci/assets/js/7.8eaaf042.js" as="script"><link rel="preload" href="/post-ci/assets/js/20.5390231e.js" as="script"><link rel="prefetch" href="/post-ci/assets/js/1.2e718cca.js"><link rel="prefetch" href="/post-ci/assets/js/10.503da5e1.js"><link rel="prefetch" href="/post-ci/assets/js/11.9d2fdfae.js"><link rel="prefetch" href="/post-ci/assets/js/12.fcb21a1d.js"><link rel="prefetch" href="/post-ci/assets/js/13.96503fd7.js"><link rel="prefetch" href="/post-ci/assets/js/14.20d93468.js"><link rel="prefetch" href="/post-ci/assets/js/15.64bd5037.js"><link rel="prefetch" href="/post-ci/assets/js/16.b9a58e29.js"><link rel="prefetch" href="/post-ci/assets/js/17.d4868fcd.js"><link rel="prefetch" href="/post-ci/assets/js/18.e106ea76.js"><link rel="prefetch" href="/post-ci/assets/js/19.ba082e3d.js"><link rel="prefetch" href="/post-ci/assets/js/21.0af97ba4.js"><link rel="prefetch" href="/post-ci/assets/js/22.e81cf84c.js"><link rel="prefetch" href="/post-ci/assets/js/23.d5ded878.js"><link rel="prefetch" href="/post-ci/assets/js/24.2bbbae87.js"><link rel="prefetch" href="/post-ci/assets/js/25.e2d55e6c.js"><link rel="prefetch" href="/post-ci/assets/js/26.c558f617.js"><link rel="prefetch" href="/post-ci/assets/js/27.99532eb6.js"><link rel="prefetch" href="/post-ci/assets/js/28.81cd58c0.js"><link rel="prefetch" href="/post-ci/assets/js/29.4582f374.js"><link rel="prefetch" href="/post-ci/assets/js/3.ff189134.js"><link rel="prefetch" href="/post-ci/assets/js/30.2a3a3f73.js"><link rel="prefetch" href="/post-ci/assets/js/31.7771bfec.js"><link rel="prefetch" href="/post-ci/assets/js/32.f8e0f22f.js"><link rel="prefetch" href="/post-ci/assets/js/33.a24a8592.js"><link rel="prefetch" href="/post-ci/assets/js/34.eeb4d13d.js"><link rel="prefetch" href="/post-ci/assets/js/35.879e0644.js"><link rel="prefetch" href="/post-ci/assets/js/36.1e299ae3.js"><link rel="prefetch" href="/post-ci/assets/js/37.793ff276.js"><link rel="prefetch" href="/post-ci/assets/js/38.27efddc4.js"><link rel="prefetch" href="/post-ci/assets/js/39.305a171b.js"><link rel="prefetch" href="/post-ci/assets/js/4.326ff035.js"><link rel="prefetch" href="/post-ci/assets/js/40.1edf8e23.js"><link rel="prefetch" href="/post-ci/assets/js/41.6665ba8b.js"><link rel="prefetch" href="/post-ci/assets/js/42.2e095cc9.js"><link rel="prefetch" href="/post-ci/assets/js/43.d927bbbc.js"><link rel="prefetch" href="/post-ci/assets/js/44.94a16f7a.js"><link rel="prefetch" href="/post-ci/assets/js/45.085356d4.js"><link rel="prefetch" href="/post-ci/assets/js/46.b04855cb.js"><link rel="prefetch" href="/post-ci/assets/js/47.bcd20207.js"><link rel="prefetch" href="/post-ci/assets/js/48.8326f4b6.js"><link rel="prefetch" href="/post-ci/assets/js/49.3b77cb10.js"><link rel="prefetch" href="/post-ci/assets/js/5.f96cd824.js"><link rel="prefetch" href="/post-ci/assets/js/50.6c45103f.js"><link rel="prefetch" href="/post-ci/assets/js/51.64d37030.js"><link rel="prefetch" href="/post-ci/assets/js/52.2e4338b7.js"><link rel="prefetch" href="/post-ci/assets/js/53.2152b72c.js"><link rel="prefetch" href="/post-ci/assets/js/54.c11e1493.js"><link rel="prefetch" href="/post-ci/assets/js/55.d1e6a60f.js"><link rel="prefetch" href="/post-ci/assets/js/6.562b2ef1.js"><link rel="prefetch" href="/post-ci/assets/js/8.40f58b51.js"><link rel="prefetch" href="/post-ci/assets/js/9.c8fcfbba.js">
+    <link rel="stylesheet" href="/post-ci/assets/css/0.styles.0012e2a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/post-ci/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/post-ci/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/post-ci/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Kubernetes YAML详解
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2022-02-13
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2023-04-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/post-ci/posts/2022/02/13/kubernetes%E5%91%BD%E4%BB%A4.html" class="post-link" data-v-4e23451f>
+      上一篇 : Kubernetes命令
+    </a> <a href="/post-ci/posts/2022/02/13/helm%E5%91%BD%E4%BB%A4.html" class="post-link" data-v-4e23451f>
+      下一篇 : Helm命令
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="kubernetes-yaml详解"><a href="#kubernetes-yaml详解" class="header-anchor">#</a> Kubernetes YAML详解</h1> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># yaml格式的pod定义文件完整内容：</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1       <span class="token comment">#必选，版本号，例如v1</span>
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Pod       <span class="token comment">#必选，Pod</span>
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>       <span class="token comment">#必选，元数据</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> string       <span class="token comment">#必选，Pod名称</span>
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> string    <span class="token comment">#必选，Pod所属的命名空间</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>      <span class="token comment">#自定义标签</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string     <span class="token comment">#自定义标签名字</span>
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>       <span class="token comment">#自定义注释列表</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>         <span class="token comment">#必选，Pod中容器的详细定义</span>
+  <span class="token key atrule">containers</span><span class="token punctuation">:</span>      <span class="token comment">#必选，Pod中容器列表</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string     <span class="token comment">#必选，容器名称</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> string    <span class="token comment">#必选，容器的镜像名称</span>
+    <span class="token key atrule">imagePullPolicy</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>Always <span class="token punctuation">|</span> Never <span class="token punctuation">|</span> IfNotPresent<span class="token punctuation">]</span> <span class="token comment">#获取镜像的策略 Alawys表示下载镜像 IfnotPresent表示优先使用本地镜像，否则下载镜像，Nerver表示仅使用本地镜像</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">]</span>    <span class="token comment">#容器的启动命令列表，如不指定，使用打包时使用的启动命令</span>
+    <span class="token key atrule">args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">]</span>     <span class="token comment">#容器的启动命令参数列表</span>
+    <span class="token key atrule">workingDir</span><span class="token punctuation">:</span> string     <span class="token comment">#容器的工作目录</span>
+    <span class="token key atrule">volumeMounts</span><span class="token punctuation">:</span>    <span class="token comment">#挂载到容器内部的存储卷配置</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string     <span class="token comment">#引用pod定义的共享存储卷的名称，需用volumes[]部分定义的的卷名</span>
+      <span class="token key atrule">mountPath</span><span class="token punctuation">:</span> string    <span class="token comment">#存储卷在容器内mount的绝对路径，应少于512字符</span>
+      <span class="token key atrule">readOnly</span><span class="token punctuation">:</span> boolean    <span class="token comment">#是否为只读模式</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>       <span class="token comment">#需要暴露的端口库号列表</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string     <span class="token comment">#端口号名称</span>
+      <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> int   <span class="token comment">#容器需要监听的端口号</span>
+      <span class="token key atrule">hostPort</span><span class="token punctuation">:</span> int    <span class="token comment">#容器所在主机需要监听的端口号，默认与Container相同</span>
+      <span class="token key atrule">protocol</span><span class="token punctuation">:</span> string     <span class="token comment">#端口协议，支持TCP和UDP，默认TCP</span>
+    <span class="token key atrule">env</span><span class="token punctuation">:</span>       <span class="token comment">#容器运行前需设置的环境变量列表</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string     <span class="token comment">#环境变量名称</span>
+      <span class="token key atrule">value</span><span class="token punctuation">:</span> string    <span class="token comment">#环境变量的值</span>
+    <span class="token key atrule">resources</span><span class="token punctuation">:</span>       <span class="token comment">#资源限制和请求的设置</span>
+      <span class="token key atrule">limits</span><span class="token punctuation">:</span>      <span class="token comment">#资源限制的设置</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> string    <span class="token comment">#Cpu的限制，单位为core数，将用于docker run --cpu-shares参数</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> string     <span class="token comment">#内存限制，单位可以为Mib/Gib，将用于docker run --memory参数</span>
+      <span class="token key atrule">requests</span><span class="token punctuation">:</span>      <span class="token comment">#资源请求的设置</span>
+        <span class="token key atrule">cpu</span><span class="token punctuation">:</span> string    <span class="token comment">#Cpu请求，容器启动的初始可用数量</span>
+        <span class="token key atrule">memory</span><span class="token punctuation">:</span> string     <span class="token comment">#内存清楚，容器启动的初始可用数量</span>
+    <span class="token key atrule">livenessProbe</span><span class="token punctuation">:</span>     <span class="token comment">#对Pod内个容器健康检查的设置，当探测无响应几次后将自动重启该容器，检查方法有exec、httpGet和tcpSocket，对一个容器只需设置其中一种方法即可</span>
+      <span class="token key atrule">exec</span><span class="token punctuation">:</span>      <span class="token comment">#对Pod容器内检查方式设置为exec方式</span>
+        <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>string<span class="token punctuation">]</span>  <span class="token comment">#exec方式需要制定的命令或脚本</span>
+      <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>       <span class="token comment">#对Pod内个容器健康检查方法设置为HttpGet，需要制定Path、port</span>
+        <span class="token key atrule">path</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">port</span><span class="token punctuation">:</span> number
+        <span class="token key atrule">host</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">scheme</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">HttpHeaders</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+          <span class="token key atrule">value</span><span class="token punctuation">:</span> string
+      <span class="token key atrule">tcpSocket</span><span class="token punctuation">:</span>     <span class="token comment">#对Pod内个容器健康检查方式设置为tcpSocket方式</span>
+         <span class="token key atrule">port</span><span class="token punctuation">:</span> number
+       <span class="token key atrule">initialDelaySeconds</span><span class="token punctuation">:</span> <span class="token number">0</span>  <span class="token comment">#容器启动完成后首次探测的时间，单位为秒</span>
+       <span class="token key atrule">timeoutSeconds</span><span class="token punctuation">:</span> <span class="token number">0</span>   <span class="token comment">#对容器健康检查探测等待响应的超时时间，单位秒，默认1秒</span>
+       <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">0</span>    <span class="token comment">#对容器监控检查的定期探测时间设置，单位秒，默认10秒一次</span>
+       <span class="token key atrule">successThreshold</span><span class="token punctuation">:</span> <span class="token number">0</span>
+       <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">0</span>
+       <span class="token key atrule">securityContext</span><span class="token punctuation">:</span>
+         privileged<span class="token punctuation">:</span><span class="token boolean important">false</span>
+    <span class="token key atrule">restartPolicy</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>Always <span class="token punctuation">|</span> Never <span class="token punctuation">|</span> OnFailure<span class="token punctuation">]</span><span class="token comment">#Pod的重启策略，Always表示一旦不管以何种方式终止运行，kubelet都将重启，OnFailure表示只有Pod以非0退出码退出才重启，Nerver表示不再重启该Pod</span>
+    <span class="token key atrule">nodeSelector</span><span class="token punctuation">:</span> obeject  <span class="token comment">#设置NodeSelector表示将该Pod调度到包含这个label的node上，以key：value的格式指定</span>
+    <span class="token key atrule">imagePullSecrets</span><span class="token punctuation">:</span>    <span class="token comment">#Pull镜像时使用的secret名称，以key：secretkey格式指定</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+    hostNetwork<span class="token punctuation">:</span><span class="token boolean important">false</span>      <span class="token comment">#是否使用主机网络模式，默认为false，如果设置为true，表示使用宿主机网络</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>       <span class="token comment">#在该pod上定义共享存储卷列表</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> string     <span class="token comment">#共享存储卷名称 （volumes类型有很多种）</span>
+      <span class="token key atrule">emptyDir</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>     <span class="token comment">#类型为emtyDir的存储卷，与Pod同生命周期的一个临时目录。为空值</span>
+      <span class="token key atrule">hostPath</span><span class="token punctuation">:</span> string     <span class="token comment">#类型为hostPath的存储卷，表示挂载Pod所在宿主机的目录</span>
+        <span class="token key atrule">path</span><span class="token punctuation">:</span> string     <span class="token comment">#Pod所在宿主机的目录，将被用于同期中mount的目录</span>
+      <span class="token key atrule">secret</span><span class="token punctuation">:</span>      <span class="token comment">#类型为secret的存储卷，挂载集群与定义的secre对象到容器内部</span>
+        <span class="token key atrule">scretname</span><span class="token punctuation">:</span> string  
+        <span class="token key atrule">items</span><span class="token punctuation">:</span>     
+        <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> string
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> string
+      <span class="token key atrule">configMap</span><span class="token punctuation">:</span>     <span class="token comment">#类型为configMap的存储卷，挂载预定义的configMap对象到容器内部</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> string
+        <span class="token key atrule">items</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">key</span><span class="token punctuation">:</span> string
+</code></pre></div></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2022-02-13
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2023-04-07
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/post-ci/posts/2022/02/13/kubernetes%E5%91%BD%E4%BB%A4.html" class="post-link" data-v-4e23451f>
+      上一篇 : Kubernetes命令
+    </a> <a href="/post-ci/posts/2022/02/13/helm%E5%91%BD%E4%BB%A4.html" class="post-link" data-v-4e23451f>
+      下一篇 : Helm命令
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><!----> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/post-ci/posts/2022/02/13/kubernetes-yaml.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/post-ci/assets/js/app.03c0fc85.js" defer></script><script src="/post-ci/assets/js/7.8eaaf042.js" defer></script><script src="/post-ci/assets/js/20.5390231e.js" defer></script>
+  </body>
+</html>
