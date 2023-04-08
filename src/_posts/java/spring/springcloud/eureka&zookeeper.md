@@ -1,4 +1,3 @@
-
 ---
 category: csrsm
 title: Eureka和ZooKeeper的区别
@@ -10,10 +9,6 @@ tags:
   - springcloud
 date: 2020-11-21
 ---
-
-Eureka和ZooKeeper的区别
-
-<!-- more -->
 
 # Eureka和ZooKeeper的区别
 
