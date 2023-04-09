@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jvm面试题 | Csrsm</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/post-ci/favicon.ico">
+    <meta name="description" content="This is my blog">
+    <link rel="preload" href="/post-ci/assets/css/0.styles.0012e2a3.css" as="style"><link rel="preload" href="/post-ci/assets/js/app.d7fff394.js" as="script"><link rel="preload" href="/post-ci/assets/js/7.8eaaf042.js" as="script"><link rel="preload" href="/post-ci/assets/js/27.6bf58fe8.js" as="script"><link rel="prefetch" href="/post-ci/assets/js/1.2e718cca.js"><link rel="prefetch" href="/post-ci/assets/js/10.503da5e1.js"><link rel="prefetch" href="/post-ci/assets/js/11.9d2fdfae.js"><link rel="prefetch" href="/post-ci/assets/js/12.fcb21a1d.js"><link rel="prefetch" href="/post-ci/assets/js/13.96503fd7.js"><link rel="prefetch" href="/post-ci/assets/js/14.20d93468.js"><link rel="prefetch" href="/post-ci/assets/js/15.f0e991c0.js"><link rel="prefetch" href="/post-ci/assets/js/16.f30d651c.js"><link rel="prefetch" href="/post-ci/assets/js/17.bcd8c3e0.js"><link rel="prefetch" href="/post-ci/assets/js/18.0505af28.js"><link rel="prefetch" href="/post-ci/assets/js/19.aa3ebf7b.js"><link rel="prefetch" href="/post-ci/assets/js/20.70335466.js"><link rel="prefetch" href="/post-ci/assets/js/21.0973e7c3.js"><link rel="prefetch" href="/post-ci/assets/js/22.3329f709.js"><link rel="prefetch" href="/post-ci/assets/js/23.1c2d7d48.js"><link rel="prefetch" href="/post-ci/assets/js/24.838c2ca8.js"><link rel="prefetch" href="/post-ci/assets/js/25.ae076022.js"><link rel="prefetch" href="/post-ci/assets/js/26.7c927ccc.js"><link rel="prefetch" href="/post-ci/assets/js/28.8186bd22.js"><link rel="prefetch" href="/post-ci/assets/js/29.a2de336c.js"><link rel="prefetch" href="/post-ci/assets/js/3.ff189134.js"><link rel="prefetch" href="/post-ci/assets/js/30.b73414a5.js"><link rel="prefetch" href="/post-ci/assets/js/31.d6f8d0f0.js"><link rel="prefetch" href="/post-ci/assets/js/32.ce08c7bb.js"><link rel="prefetch" href="/post-ci/assets/js/33.2f3e4670.js"><link rel="prefetch" href="/post-ci/assets/js/34.56499776.js"><link rel="prefetch" href="/post-ci/assets/js/35.85c56b90.js"><link rel="prefetch" href="/post-ci/assets/js/36.2aae44b6.js"><link rel="prefetch" href="/post-ci/assets/js/37.8e23ffe8.js"><link rel="prefetch" href="/post-ci/assets/js/38.b1c95985.js"><link rel="prefetch" href="/post-ci/assets/js/39.535d630a.js"><link rel="prefetch" href="/post-ci/assets/js/4.326ff035.js"><link rel="prefetch" href="/post-ci/assets/js/40.d4e8e9cb.js"><link rel="prefetch" href="/post-ci/assets/js/41.f9f3f5c4.js"><link rel="prefetch" href="/post-ci/assets/js/42.033cafdc.js"><link rel="prefetch" href="/post-ci/assets/js/43.fffd4ab5.js"><link rel="prefetch" href="/post-ci/assets/js/44.41e542d6.js"><link rel="prefetch" href="/post-ci/assets/js/45.959478c0.js"><link rel="prefetch" href="/post-ci/assets/js/46.d4d72e71.js"><link rel="prefetch" href="/post-ci/assets/js/47.28092f9f.js"><link rel="prefetch" href="/post-ci/assets/js/48.bf8df87a.js"><link rel="prefetch" href="/post-ci/assets/js/49.08c4ce42.js"><link rel="prefetch" href="/post-ci/assets/js/5.f96cd824.js"><link rel="prefetch" href="/post-ci/assets/js/50.04acac33.js"><link rel="prefetch" href="/post-ci/assets/js/51.a4814c21.js"><link rel="prefetch" href="/post-ci/assets/js/52.3f224493.js"><link rel="prefetch" href="/post-ci/assets/js/53.59ce7c4f.js"><link rel="prefetch" href="/post-ci/assets/js/54.212d0dc3.js"><link rel="prefetch" href="/post-ci/assets/js/55.06ab64ec.js"><link rel="prefetch" href="/post-ci/assets/js/56.a03dd5c9.js"><link rel="prefetch" href="/post-ci/assets/js/57.26814c66.js"><link rel="prefetch" href="/post-ci/assets/js/58.78ed4665.js"><link rel="prefetch" href="/post-ci/assets/js/59.e34eeb11.js"><link rel="prefetch" href="/post-ci/assets/js/6.562b2ef1.js"><link rel="prefetch" href="/post-ci/assets/js/60.c4b35501.js"><link rel="prefetch" href="/post-ci/assets/js/8.40f58b51.js"><link rel="prefetch" href="/post-ci/assets/js/9.c8fcfbba.js">
+    <link rel="stylesheet" href="/post-ci/assets/css/0.styles.0012e2a3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/background.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/post-ci/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          Csrsm
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/post-ci/" class="navbar-link" data-v-e4145d0a>
+            首页
+          </a><a href="/post-ci/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            Csrsm
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          jvm面试题
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2022-12-02
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2023-04-09
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/post-ci/posts/2022/12/02/spring%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html" class="post-link" data-v-4e23451f>
+      上一篇 : spring面试题
+    </a> <a href="/post-ci/posts/2023/02/13/%E5%AE%B9%E5%99%A8%E9%9A%94%E7%A6%BB%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.html" class="post-link" data-v-4e23451f>
+      下一篇 : 容器隔离核心技术
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><h2 id="_1-描述一下jvm内存模型-以及这些空间存放的内容"><a href="#_1-描述一下jvm内存模型-以及这些空间存放的内容" class="header-anchor">#</a> 1.描述一下jvm内存模型，以及这些空间存放的内容？</h2> <img src="/post-ci/img/interview/jvm1.png">
+## 2.类加载过程
+<img src="/post-ci/img/interview/jvm2.png">
+加载过程是双亲委派机制，主要方法为 loadClass --&gt; defineClass--&gt; findClass
+Bootstrap ClassLoader 是逻辑上的类加载器，实际并不存在，是空的，主要加载 JAVA_HOME/jre/lib/rt.jar
+Extension ClassLoader 主要加载JAVA_HOME/jre/lib/*.jar或者是-Djava.ext.dirs下的jar
+Application ClassLoader 主要加载classpath中指定的jar
+Custom ClassLoader 是自定义类加载器，自己指定加载类，举例tomcat
+静态变量在验证被创建，赋默认值，初始化时赋初始值。
+<h2 id="_3-堆内存划分-如何回收内存对象-有哪些回收算法"><a href="#_3-堆内存划分-如何回收内存对象-有哪些回收算法" class="header-anchor">#</a> 3.堆内存划分，如何回收内存对象，有哪些回收算法</h2> <img src="/post-ci/img/interview/jvm3.png">
+垃圾回收算法：标记清除、复制（多为新生代垃圾回收使用）、标记整理
+<h2 id="_4-如何解决线上gc频繁问题"><a href="#_4-如何解决线上gc频繁问题" class="header-anchor">#</a> 4.如何解决线上gc频繁问题</h2> <ol><li>查看监控或日志，了解问题出现的时间点以及当前的FGC的频率，对比正常情况频率查看是否正常。</li> <li>查看出现问题的时间点之前有没有程序上线或者升级操作，如果有，排查更新的代码是否有问题。</li> <li>了解JVM参数设置，包括：堆空间各区域大小设置，新生代、老年代分别采用了哪些垃圾回收器，分析参数设置的是否合理</li> <li>再对步骤1中列出的可能原因做排除法，其中元空间被打满、内存泄漏、代码显示调用gc方法，比较容易排查</li> <li>针对大对象、长周期对象导致的FGC，可通过jmap-histo命令结合dump堆内存文件作进一步分析，需要先定位到可疑对象。</li> <li>通过可疑对象定位到具体代码再次分析，这时候要结合GC原理和JVM参数设置，弄清楚可疑对象是否满足了进入老年代的条件再下结论。</li></ol> <h2 id="_5-简述一下内存溢出的原因-如何排查线上问题"><a href="#_5-简述一下内存溢出的原因-如何排查线上问题" class="header-anchor">#</a> 5.简述一下内存溢出的原因，如何排查线上问题</h2> <ul><li>java.lang.OutOfMemoryError:.....java.heap.space.....堆栈溢出，代码问题的可能性极大</li> <li>java.lang.OutOfMemoryError:GC over head limit exceeded 系统处于高频GC状态，而且回收的效果依然不佳的情况，就会开始报这个错误，这种情况一般是产生了很多不可以被释放的对象，有可能是引用使用不当导致，或申请大对象导致，但是java.heap.space的内存溢出有可能提前不会报这个错误，也就是可能内存就直接不够导致，而不是高频gc</li> <li>java.lang.OutOfMemoryError:PermGen space jdk1.7之前才会出现的问题，原因是系统的代码非常多或引用的第三方包非常多，或代码中使用了大量的常量，或通过intern注入常量、或者通过动态代码加载等方法，导致常量池的膨胀</li> <li>java.lang.OutOfMemoryError:Direct buffer memory 直接内存不足，因为jvm垃圾回收不会回收掉直接内存这部分内存，所以可能原因是直接或者间接使用了ByteBuffer中的allocatedDirect方法的时候，没有做clear</li> <li>java.lang.StactOverflowError: -Xss设置太小</li> <li>java.lang.OutOfMemoryError: unable to create new native thread堆外内存不足，无法为线程分配内存区域</li> <li>java.lang.OutOfMemoryError：request {} byte for {} out of swap地址空间不够</li></ul> <h2 id="_6-jvm有哪些垃圾回收器-实际中如何选择"><a href="#_6-jvm有哪些垃圾回收器-实际中如何选择" class="header-anchor">#</a> 6.jvm有哪些垃圾回收器，实际中如何选择</h2> <h2 id="_7-三色标记算法"><a href="#_7-三色标记算法" class="header-anchor">#</a> 7.三色标记算法</h2> <p>常见的判断对象存活的算法：</p> <ul><li>引用计数法：会产生循环引用的问题</li> <li>可达性分析算法：GC roots包括
+<ul><li>虚拟机栈中引用的对象</li> <li>本地方法栈JNI引用的对象</li> <li>方法区中的类静态属性引用的对象</li> <li>方法区中的常量引用的对象</li></ul></li></ul> <p>垃圾收集算法：标记-清除、标记-复制、标记-整理算法以及在此基础上的分代收集算法（新生代/老年代），每代采取不同的回收算法，以提高整体的分配和回收效率。
+迄今为止，所有垃圾收集器在根节点枚举这一步骤时都是必须暂停用户线程的，因此毫无疑问会面临 ”Stop The World“ 的困扰。啊？啥是 ”Stop The World“，也就是我们平时说的 STW，其实就是根节点枚举过程中必须在一个能保障一致性的快照中进行，说白了就相当于持久化的快照一样，在某个时间点这个过程像被冻结了。如果根节点枚举过程中整个根节点集合对象引用关系还在变化，那垃圾回收分析的结果也不会准确，所以这就导致垃圾收集过程中必须停顿所有用户线程。
+<strong>想要解决或者降低用户线程的停顿，三色标记算法就登场了。</strong>
+三色标记法事先约定：
+<img src="/post-ci/img/interview/jvm4.png">
+根据可达性分析算法，从 GC Roots 开始进行遍历访问。</p> <ul><li>初始状态，所有的对象都是白色的，只有 GC Roots 是黑色的。</li></ul> <img src="/post-ci/img/interview/jvm5.png"> <ul><li>初始标记阶段，GC Roots 标记直接关联对象置为灰色。</li></ul> <img src="/post-ci/img/interview/jvm6.png"> <ul><li>并发标记阶段，扫描整个引用链。
+<ul><li>没有子节点的话，将本节点变为黑色。</li> <li>有子节点的话，则当前节点变为黑色，子节点变为灰色。</li></ul></li></ul> <img src="/post-ci/img/interview/jvm7.png"> <ul><li>重复并发标记阶段，直至灰色对象没有其它子节点引用时结束。</li></ul> <img src="/post-ci/img/interview/jvm8.png"> <img src="/post-ci/img/interview/jvm9.png"> <ul><li>扫描完成此时黑色对象就是存活的对象，白色对象就是已消亡可回收的对象。即（A、D、E、F、G）可达也就是存活对象，（B、C、H）不可达可回收的对象。</li></ul> <p><strong>三色标记算法缺陷</strong>
+不知道你是否还记得我们前言说的，所有垃圾收集器在根节点枚举这一步骤时都是必须暂停用户线程的，产生STW，这对实时性要求高的系统来说，这种需要长时间挂起用户线程是不可接受的。想要解决或者降低用户线程的停顿的问题，我们才引入了三色标记算法。
+三色标记算法也存在缺陷，在并发标记阶段的时候，因为用户线程与 GC 线程同时运行，有可能会产生多标或者漏标。
+<strong>多标</strong>
+假设已经遍历到 E（变为灰色了），此时应用执行了 objD.fieldE = null (D &gt; E 的引用断开)
+<img src="/post-ci/img/interview/jvm10.png">
+D &gt; E 的引用断开之后，E、F、G 三个对象不可达，应该要被回收的。然而因为 E 已经变为灰色了，其仍会被当作存活对象继续遍历下去。最终的结果是：这部分对象仍会被标记为存活，即本轮 GC 不会回收这部分内存。
+这部分本应该回收但是没有回收到的内存，被称之为浮动垃圾。浮动垃圾并不会影响应用程序的正确性，只是需要等到下一轮垃圾回收中才被清除。
+另外，针对并发标记开始后的新对象，通常的做法是直接全部当成黑色，本轮不会进行清除。这部分对象期间可能会变为垃圾，这也算是浮动垃圾的一部分。
+<strong>漏标</strong>
+假设 GC 线程已经遍历到 E（变为灰色了），此时应用线程先执行了：
+var G = objE.fieldG; objE.fieldG = null; // 灰色E 断开引用 白色G objD.fieldG = G; // 黑色D 引用 白色G
+<img src="/post-ci/img/interview/jvm11.png">
+此时切回到 GC 线程，因为 E 已经没有对 G 的引用了，所以不会将 G 置为灰色；尽管因为 D 重新引用了 G，但因为 D 已经是黑色了，不会再重新做遍历处理。
+最终导致的结果是：G 会一直是白色，最后被当作垃圾进行清除。这直接影响到了应用程序的正确性，是不可接受的。
+不难分析，漏标只有同时满足以下两个条件时才会发生：</p> <ul><li>一个或者多个黑色对象重新引用了白色对象；即黑色对象成员变量增加了新的引用。</li> <li>灰色对象断开了白色对象的引用（直接或间接的引用）；即灰色对象原来成员变量的引用发生了变化。</li></ul> <p>如下代码：
+var G = objE.fieldG; // 1.读objE.fieldG = null; // 2.写objD.fieldG = G; // 3.写
+我们只需在上面三个步骤中任意一个中，将对象 G 记录起来，然后作为灰色对象再进行遍历即可。比如放到一个特定的集合，等初始的 GC Roots 遍历完（并发标记），该集合的对象遍历即可（重新标记）。
+重新标记是需要 STW 的，因为应用程序一直在跑的话，该集合可能会一直增加新的对象，导致永远都跑不完。当然，并发标记期间也可以将该集合中的大部分先跑了，从而缩短重新标记 STW 的时间，这个是优化问题了。看到了没？三色标记算法也并不能完全解决 STW 的问题，只能尽可能缩短 STW 的时间，尽可能达到停顿时间最少。
+<strong>读屏障与写屏障</strong>
+针对于漏标问题，JVM 团队采用了读屏障与写屏障的方案。
+读屏障是拦截第一步；而写屏障用于拦截第二和第三步。
+它们拦截的目的很简单：就是在读写前后，将对象 G 给记录下来。
+<strong>读屏障</strong>
+oop oop_field_load(oop* field) { pre_load_barrier(field); // 读屏障-读取前操作 return <em>field;}
+读屏障是直接针对第一步：var G = objE.fieldG;，当读取成员变量之前，先记录下来。
+void pre_load_barrier(oop</em> field, oop old_value) { if ($gc_phase == GC_CONCURRENT_MARK &amp;&amp; !isMarkd(field)) { oopold_value = <em>field; remark_set.add(old_value); // 记录读取到的对象 }}
+这种做法是保守的，但也是安全的。因为条件一中【一个或者多个黑色对象重新引用了白色对象】，重新引用的前提是：得获取到该白色对象，此时已经读屏障就发挥作用了。
+<strong>写屏障</strong>
+我们再来看下第二、三步的写操作，给某个对象的成员变量赋值时，底层代码：
+/</em>** @param field 某对象的成员变量，如 E.fieldG* @param new_value 新值，如 null*/void oop_field_store(oop* field, oopnew_value) { <em>field = new_value; // 赋值操作}
+所谓的写屏障，其实就是指给某个对象的成员变量赋值操作前后，加入一些处理（类似 Spring AOP 的概念）。
+void oop_field_store(oop</em> field, oop new_value) { pre_write_barrier(field); // 写屏障-写前操作 *field = new_value; post_write_barrier(field, value); // 写屏障-写后操作}</p> <p><strong>增量更新（Incremental Update）与原始快照（Snapshot At The Beginning，SATB）</strong> <strong>4.1 增量更新</strong>
+当对象 D 的成员变量的引用发生变化时（objD.fieldG = G;），我们可以利用写屏障，将 D 新的成员变量引用对象 G 记录下来：
+void post_write_barrier(oop* field, oop new_value) { if ($gc_phase == GC_CONCURRENT_MARK &amp;&amp; !isMarkd(field)) { remark_set.add(new_value); // 记录新引用的对象 }}
+这种做法的思路是：不要求保留原始快照，而是针对新增的引用，将其记录下来等待遍历，即增量更新（Incremental Update）。
+增量更新破坏了漏标的条件一：【 一个或者多个黑色对象重新引用了白色对象】，从而保证了不会漏标。
+<strong>4.2 原始快照</strong>
+当对象 E 的成员变量的引用发生变化时（objE.fieldG = null;），我们可以利用写屏障，将 E 原来成员变量的引用对象 G 记录下来：
+void pre_write_barrier(oop* field) { oop old_value = *field; // 获取旧值 remark_set.add(old_value); // 记录 原来的引用对象}
+当原来成员变量的引用发生变化之前，记录下原来的引用对象。</p> <p><strong>总结</strong>
+基于可达性分析的 GC 算法，标记过程几乎都借鉴了三色标记的算法思想，尽管实现的方式不尽相同，比如标记的方式有栈、队列、多色指针等。
+对于读写屏障，以 Java HotSpot VM 为例，其并发标记时对漏标的处理方案如下：</p> <ul><li>CMS：写屏障 + 增量更新</li> <li>G1、Shenandoah：写屏障 + 原始快照</li> <li>ZGC：读屏障</li></ul> <p>上面的的方案为啥是这样的，你有想过为什么吗？</p> <ul><li>原始快照相对增量更新来说效率更高（当然原始快照可能造成更多的浮动垃圾），因为不需要在重新标记阶段再次深度扫描被删除引用对象。</li> <li>而 CMS 对增量引用的根对象会做深度扫描，G1 因为很多对象都位于不同的 region，CMS 就一块老年代区域，重新深度扫描对象的话 G1 的代价会比 CMS 高，所以 G1 选择原始快照不深度扫描对象，只是简单标记，等到下一轮 GC 再深度扫描。</li> <li>而 ZGC 有一个标志性的设计是它采用的染色指针技术，染色指针可以大幅减少在垃圾收集过程中内存屏障的使用数量，设置内存屏障，尤其是写屏障的目的通常是为了记录对象引用的变动情况，如果讲这些信息直接维护在指针中，显然可以省去一些专门的记录操作。而 ZGC 没有使用写屏障，只使用了读屏障，显然对性能大有裨益的。</li></ul></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2022-12-02
+    </span> <span class="update-date" data-v-4e23451f>
+      最后修改 : 2023-04-09
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/post-ci/posts/2022/12/02/spring%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html" class="post-link" data-v-4e23451f>
+      上一篇 : spring面试题
+    </a> <a href="/post-ci/posts/2023/02/13/%E5%AE%B9%E5%99%A8%E9%9A%94%E7%A6%BB%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.html" class="post-link" data-v-4e23451f>
+      下一篇 : 容器隔离核心技术
+    </a></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(http://img.icoisini.xyz/wx-background.jpg);" data-v-9d847660><img src="http://img.icoisini.xyz/cm.jpg" alt="小二哥" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      小二哥
+    </section> <section class="info-desc" data-v-9d847660>Don`t Worry Be Happy!</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="DaLian City, China" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian City, China</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian City, China
+        </span></span></section> <section data-v-9d847660><span title="DaLian University of Technology" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>DaLian University of Technology</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          DaLian University of Technology
+        </span></span></section> <section data-v-9d847660><a href="mailto:csrsming@163.com" title="csrsming@163.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>csrsming@163.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          csrsming@163.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: csrsm" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/post-ci/posts/2022/12/02/jvm%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html#_1-描述一下jvm内存模型-以及这些空间存放的内容">1.描述一下jvm内存模型，以及这些空间存放的内容？</a></li><li><a href="/post-ci/posts/2022/12/02/jvm%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html#_3-堆内存划分-如何回收内存对象-有哪些回收算法">3.堆内存划分，如何回收内存对象，有哪些回收算法</a></li><li><a href="/post-ci/posts/2022/12/02/jvm%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html#_4-如何解决线上gc频繁问题">4.如何解决线上gc频繁问题</a></li><li><a href="/post-ci/posts/2022/12/02/jvm%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html#_5-简述一下内存溢出的原因-如何排查线上问题">5.简述一下内存溢出的原因，如何排查线上问题</a></li><li><a href="/post-ci/posts/2022/12/02/jvm%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html#_6-jvm有哪些垃圾回收器-实际中如何选择">6.jvm有哪些垃圾回收器，实际中如何选择</a></li><li><a href="/post-ci/posts/2022/12/02/jvm%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html#_7-三色标记算法">7.三色标记算法</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/post-ci/posts/2022/12/02/jvm%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86.html#post-comments">
+      评论
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/csrsm" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: csrsm" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: csrsm</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c>Copyright 2016-present <a href="https://github.com/csrsm" target="_blank">csrsm</a></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/post-ci/assets/js/app.d7fff394.js" defer></script><script src="/post-ci/assets/js/7.8eaaf042.js" defer></script><script src="/post-ci/assets/js/27.6bf58fe8.js" defer></script>
+  </body>
+</html>
