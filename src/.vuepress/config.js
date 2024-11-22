@@ -7,7 +7,7 @@ module.exports = {
     // 网站描述
     description: 'This is my blog',
     head:[
-      ['link',{rel:'icon',href:'/favicon.ico'}]
+      ['link',{rel:'icon',href:'/img/favicon.ico'}]
     ],
     dest: './dist',
 
