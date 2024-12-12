@@ -4,7 +4,7 @@ title: Hello, world!
 top: true
 header-title: true
 header-image:
-  -  - /img/background.jpg
+  - /img/background.jpg
   - /img/001.png
   - /img/0002.png
   - /img/0003.png
